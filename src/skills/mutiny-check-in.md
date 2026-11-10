@@ -1,6 +1,6 @@
 ---
 name: mutiny-check-in
-description: "Mutiny check-in, from Sales Skills by Mutiny. Two ways to run it: check in on one deal ('Run the Mutiny check-in on [company]', 'check in on [company]', 'nudge [company]'), or scan the pipeline for deals at risk and draft check-ins for the ones that need you most ('Run the Mutiny check-in on my pipeline', 'which deals need a check-in?', 'which accounts have gone quiet?'). Reads the CRM, email and calls, picks one play per deal grounded in what the buyer actually said, and drafts a short check-in in your voice, never 'just checking in'. Sales leaders get the scan rolled up by rep. Use whenever someone has a stalled, quiet or slipping deal, wants to know which deals are at risk or have gone quiet, or needs to get back in touch with a buyer who stopped replying."
+description: "Mutiny check-in, from Sales Skills by Mutiny. So no account goes cold. Point it at one deal ('Run the Mutiny check-in on [company]', 'check in on [company]', 'nudge [company]') or at the whole pipeline ('Run the Mutiny check-in on my pipeline', 'which deals need a check-in?', 'which accounts have gone quiet?'). It reads the CRM, email and calls, works out which deals are stalling and why, finds one honest reason to get back in touch based on what the buyer said, and drafts a short message in the rep's voice that never opens with 'just checking in'. Sales leaders get the scan grouped by rep. Nothing is sent. Use whenever a deal is stalled, quiet or slipping, someone wants to know which deals are at risk, or a buyer has stopped replying and the rep needs a way back in."
 ---
 
 
@@ -8,7 +8,7 @@ No account goes cold. When a deal goes quiet or starts to slip, you find the one
 
 | Mode | When | What they get |
 |---|---|---|
-| **One deal** | They name a company | The play, and a check-in in their voice that's ready to send |
+| **One deal** | They name a company | Why now, and a check-in in their voice that's ready to send |
 | **Pipeline scan** | "Which deals need a check-in?" | Their at-risk deals, ranked, with check-ins drafted for the top 3 |
 
 ## At risk
@@ -42,55 +42,62 @@ For each deal you're going to draft for:
   - `mutiny-how-i-work.md`: `## What I do on my best deals` (a check-in is a good way to bring one of those moves to this deal), `## What slips`, `## My rules` (how often, which channel, what's off limits).
 - **No voice file.** Read 5–10 emails they recently sent to buyers. If you can't do that either, write short and plain and tell them the tone is a first guess.
 
-## Step 3: Pick one play
+## Step 3: Find the reason to write
 
-One play per deal: the one with the best evidence behind it. Stack two angles in one message and it gets long, and long gets ignored.
+Every check-in needs one real reason to exist. Pick the one with the best evidence behind it. Put two in one message and it gets long, and long gets ignored.
 
-- **Own a missed promise.** The person said they'd do something and didn't. Deliver it now and say so plainly.
-- **Close a loose end.** The buyer raised a question, a concern or a date, and nobody ever answered it.
-- **Bring in someone they named.** The buyer mentioned a person ("my CFO will want to see this") who isn't on the deal yet.
-- **Send something useful.** A real page on the seller's site that answers a pain the buyer described. Include the URL.
-- **Ask for the decision.** Late stage and quiet. Ask a direct, low-pressure question about whether the timing or the priority changed.
-- **No good play.** Say so. Suggest what to find out first, or another way in: a different contact, a phone call. An honest "don't send anything yet" beats "just checking in."
+- **You owe them something.** The person said they'd do something and didn't. Deliver it now and say so plainly.
+- **They asked and nobody answered.** The buyer raised a question, a concern or a date, and it was left hanging.
+- **Someone they mentioned isn't in the loop.** The buyer named a person ("my CFO will want to see this") who hasn't been brought in.
+- **You have something that helps.** A real page on the seller's site that speaks to a problem the buyer described. Include the URL.
+- **It's time to ask straight.** Late stage and quiet. Ask a direct, no-pressure question about whether the timing or the priority changed.
+- **There's no good reason yet.** Say so. Suggest what to find out first, or another way in: a different contact, a phone call. An honest "don't send anything yet" beats "just checking in."
 
 ## Step 4: Draft the check-in
 
 - Write it in their voice, from `mutiny-voice.md`: greeting, sign-off, length, phrases. If their email tool adds a signature, don't type one.
-- Under 120 words. Open with the hook from the play. Never open with "just checking in" or "circling back."
+- Under 120 words. Open with the reason. Never open with "just checking in" or "circling back."
 - Quote the buyer only in words you read during this run, in an email, a call or a note. Paraphrase everything else.
-- Make the last line one specific ask. Tie the subject line to the play.
-- Ready to send, with no [brackets] left for them to fill in. If the best play needs a fact you don't have, put a one-line note above the draft or choose a different play.
+- Make the last line one specific ask. Tie the subject line to the reason.
+- Ready to send, with no [brackets] left for them to fill in. If the best reason needs a fact you don't have, put a one-line note above the draft or choose a different reason.
 - Email unless `## My rules` says otherwise, or chat is clearly how they talk with this buyer. If you choose chat, say why.
 
-## Output format
+## What they see
 
 **One deal:**
 
 ```
-[Deal name] · [stage] · [amount] · at risk: [which test, with date]
+**Mutiny check-in** · [Company]
+[Stage] · [amount] · [which of the three tests, with the date]
 
-The play: [play] — [one sentence tied to what the buyer said or what was promised].
+**Why now.** [One sentence tied to what the buyer said or what was promised.]
 
-Subject: [subject]
-To: [contact]
+## Check-in for [buyer's first name]
 
-[Body]
+**Subject:** [subject]
+
+[The message, in their voice]
 ```
 
 **Pipeline scan:**
 
 ```
-[N] of your [M] open deals are at risk.
+**Mutiny check-in** · Pipeline scan
+[N] of [M] open deals are going quiet.
 
-| Deal | Stage | Amount | Why it's at risk | Play |
+| Account | Stage | Amount | What's wrong | Why now |
 |---|---|---|---|---|
-| [Deal] | [stage] | [amount] | [test + date] | [play in a few words] |
+| [Company] | [stage] | [amount] | [test, with date] | [the reason, in a few words] |
 
-**1. [Deal]** — The play: [one sentence]
-Subject: [subject]
-[Body]
+## 1. [Company]: check-in for [buyer's first name]
 
-**2. [Deal]** ...
+**Why now.** [One sentence.]
+
+**Subject:** [subject]
+
+[The message]
+
+## 2. [Company]: ...
 ```
 
 If you suggested a CRM change (a next step, or a close date that has already passed) and the CRM connector can write, offer once to apply it and list the exact changes.
@@ -106,8 +113,8 @@ Finish with one offer they can take by saying "yes." After a scan, if you can cr
 
 ## Rules
 
-- **Only what you can trace.** Every commitment, name, quote and concern comes from the CRM, email, a call or the person. A check-in built on something you made up costs more trust than sending nothing. If a play needs a fact you don't have, choose another play.
+- **Only what you can trace.** Every commitment, name, quote and concern comes from the CRM, email, a call or the person. A check-in built on something you made up costs more trust than sending nothing. If a reason needs a fact you don't have, choose another reason.
 - **Draft, don't send.** Never send a message or change the CRM until the person approves the exact thing.
-- **One play, one ask.** A short check-in gets read. A menu of options gets ignored.
-- **Their rules win.** Follow `## My rules`. If a rule blocks the best play, say so. Don't break it.
+- **One reason, one ask.** A short check-in gets read. A menu of options gets ignored.
+- **Their rules win.** Follow `## My rules`. If a rule gets in the way of the best reason to write, say so. Don't break it.
 - **No buyer details in anything saved** to their profile or notes files.

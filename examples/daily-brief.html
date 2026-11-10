@@ -3,382 +3,310 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily brief</title>
+<title>Mutiny</title>
 <style>
-:root{
-  color-scheme:light;
-  --paper:#EFEFEF; --card:#FFFFFF; --ink:#000000; --ink-70:rgba(0,0,0,.7); --ink-50:rgba(0,0,0,.58); --ink-30:rgba(0,0,0,.3);
-  --line:#E0E0E0; --chip:#EFEFEF; --track:#E0E0E0;
-  --green:#B2FF14; --green-soft:#D2FD78;
-  --red:#D93A1B; --red-soft:#FFE1DA;
-  --gold:#A73BF5; --gold-soft:#F2D1FC; --gold-text:#6A1BA6;
-  --display:'KMR Waldenburg',Arial,Helvetica,sans-serif; --serif:'Reckless Condensed S',Georgia,'Times New Roman',serif;
-}
+:root{color-scheme:light;--purple:#A73BF5;--lilac:#F2D1FC;--lime:#B2FF14;--lime-soft:#D2FD78;--coral:#FB5A3D;--coral-ink:#B92C12;--coral-soft:#FFE1DA;--purple-ink:#6A1BA6;--ink:#000;--ink-2:rgba(0,0,0,.72);--ink-3:rgba(0,0,0,.54);--rule:rgba(0,0,0,.14);--page:#FFFFFF;--soft:#F4F4F2;--serif:'Reckless Condensed S',Georgia,'Times New Roman',serif;--sans:'KMR Waldenburg',Arial,Helvetica,sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 'KMR Waldenburg',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:960px;margin:0 auto;padding:16px 16px 40px}
-.num{font-variant-numeric:tabular-nums}
-.chip{display:block;font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:-.2px;color:var(--ink)}
-.hero{background:#000000;color:#FFFFFF;position:relative;border-radius:4px;padding:20px 24px 18px}
-.hero h1{font-family:var(--serif);font-feature-settings:"lnum","tnum";color:#FFFFFF;font-size:40px;line-height:1.05;letter-spacing:-.3px;font-weight:400;margin:0 0 4px;max-width:760px}
-.hero .sub{color:rgba(255,255,255,.75);font-size:15px;margin:0 0 16px}
-.health{display:flex;height:10px;border-radius:2px;overflow:hidden;background:rgba(250,248,245,.15)}
-.g-fill{background:var(--green)}
-.r-fill{background:var(--red)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:14px;border-top:1px solid rgba(250,248,245,.16)}
-.stat{padding:14px 12px 0 0}
-.stat+.stat{padding-left:16px;border-left:1px solid rgba(250,248,245,.16)}
-.stat .n{font-family:var(--serif);font-feature-settings:"lnum","tnum";font-size:32px;font-weight:400;letter-spacing:-.3px;line-height:1.15}
-.stat .l{font-size:12px;color:rgba(255,255,255,.75)}
-.stat .key{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:1px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 22px;margin-top:16px}
-.head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-.hint{font-size:12px;color:var(--ink-50)}
-.item{border-top:1px solid var(--line)}
-.head + .item{border-top:0}
-.row{display:grid;grid-template-columns:26px 1fr 14px;gap:6px;padding:10px 0;align-items:start}
-details.item summary{list-style:none;cursor:pointer}
-details.item summary::-webkit-details-marker{display:none}
-details.item summary .row::after{content:"";width:7px;height:7px;border-right:1.5px solid var(--ink-30);border-bottom:1.5px solid var(--ink-30);transform:rotate(-45deg);margin-top:7px;transition:transform .15s}
-details.item[open] summary .row::after{transform:rotate(45deg)}
-details.item summary:hover .row::after{border-color:var(--ink-70)}
-.mark.dot::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ink-30);margin-top:6px}
-.mark.dot.r::before{background:var(--red)}
-.mark.dot.g::before{background:var(--green);box-shadow:0 0 0 1px rgba(0,0,0,.35)}
-.tick{width:16px;height:16px;border-radius:50%;background:var(--green);color:#000;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
-.title{font-weight:600}
-.who{font-size:12px;color:var(--ink-50);font-weight:400;margin-left:6px}
-.sub2{font-size:13px;color:var(--ink-70)}
-.detail{margin:0 20px 12px 28px;padding:10px 12px;background:#F5F5F5;border-radius:6px;font-size:13px;color:var(--ink-70)}
-.detail ul,.detail ol{margin:0;padding-left:18px}
-.detail ol li{color:var(--ink)}
-.detail .ctx{margin-top:8px;font-size:12px;color:var(--ink-50)}
-a.stat{display:block;color:inherit;text-decoration:none;cursor:pointer}
-a.stat:hover .l{text-decoration:underline;text-underline-offset:2px}
-section[id]{scroll-margin-top:12px}
-.cols{display:grid;grid-template-columns:1fr 1fr}
-.cols > .item:nth-child(odd){padding-right:22px;border-right:1px solid var(--line)}
-.cols > .item:nth-child(even){padding-left:22px}
-.num-badge{width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:-1px}
-.cols > .item:nth-child(-n+2){border-top:0}
-.detail li+li{margin-top:3px}
-.next{color:var(--ink);font-size:13px}
-.next::before{content:"→ ";color:var(--ink-30)}
-.qline{margin:3px 0 2px}
-.tag.r{background:var(--red-soft);color:var(--red)}
-.tag.g{background:var(--green-soft);color:var(--green)}
-.tag.n{background:var(--chip);color:var(--ink-70)}
-.empty{font-size:13px;color:var(--ink-50);padding:6px 0}
-.rep-row{display:grid;grid-template-columns:190px 1fr;gap:12px}
-.minibar{display:flex;height:8px;border-radius:2px;overflow:hidden;background:var(--track);margin-top:6px;max-width:220px}
-.more{font-size:12px;color:var(--ink-50);padding-top:10px;border-top:1px solid var(--line)}
-.r-al{text-align:right}
-.meta{font-size:12px;color:var(--ink-50)}
-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;font-size:12px;color:var(--ink-50)}
-footer details summary{cursor:pointer}
-footer a{color:var(--ink-70);text-decoration:underline;text-underline-offset:2px}
-footer a:hover{color:var(--ink)}
-.about{max-width:680px;margin-top:6px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:4px;color:var(--ink-70);font-size:13px}
-.about p{margin:0 0 8px}
-.about p:last-child{margin:0}
-.about b{color:var(--ink);font-weight:600}
-.tag.g{color:#000!important}
-.y-fill{background:var(--gold)}
-.mark.dot.y::before{background:var(--gold)}
-.tag.y{background:var(--gold-soft);color:var(--gold-text)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;align-items:start}
-.grid2 .card,.grid3 .card{margin-top:0}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;align-items:start}
-.card.won{border-top:3px solid var(--green)}
-.card.lost{border-top:3px solid var(--red)}
-.card.won .head,.card.lost .head{border-bottom:0}
-.mark{font-weight:700;color:var(--ink-30);font-size:14px}
-.tag{display:inline-block;font-size:12px;font-weight:600;border-radius:2px;padding:1px 6px;white-space:nowrap;margin-left:6px}
-.qline .tag{margin-left:0}
-.stage{display:grid;grid-template-columns:170px 1fr 100px;gap:14px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
-.head + .stage{border-top:0}
-.stage .bar{display:flex;height:12px;border-radius:2px;overflow:hidden}
-.stage .gap{grid-column:2/4;font-size:12px;color:var(--ink-50);margin-top:-6px}
-.legend{display:flex;gap:16px;font-size:12px;color:var(--ink-50);margin-top:10px}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
-footer details p{max-width:640px;margin:6px 0 0}
-@media (max-width:720px){
-  .hero{padding:22px 18px 18px}
-  .hero h1{font-size:30px}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(3){padding-left:0;border-left:0}
-  .stat:nth-child(n+3){margin-top:10px}
-  .grid2,.grid3,.cols{grid-template-columns:1fr}
-  .cols > .item:nth-child(2){border-top:1px solid var(--line)}
-  .cols > .item:nth-child(odd){padding-right:0;border-right:0}
-  .cols > .item:nth-child(even){padding-left:0}
-  .card{padding:16px}
-  .detail{margin:0 0 12px 28px}
-  .rep-row{grid-template-columns:1fr;gap:4px}
-  .stage{grid-template-columns:1fr 90px}
-  .stage .bar{grid-column:1/3}
-  .stage .gap{grid-column:1/3;margin-top:0}
-}
-.row.t{grid-template-columns:52px 1fr 14px}
-.time{font-weight:700;font-size:13px;color:var(--ink);margin-top:1px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+.sheet{max-width:780px;margin:0 auto;padding:0 0 48px}
+.top{background:var(--lilac);padding:26px 24px 22px;border-radius:0 0 22px 22px}
+.kind{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+.top h1{font:400 44px/1.02 var(--serif);letter-spacing:-.3px;margin:10px 0 6px;text-wrap:balance}
+.top .sub{font-size:16px;margin:0;color:var(--ink-2)}
+.top .note{font-size:14px;margin:6px 0 0;color:var(--ink-2)}
+.alert{margin:14px 0 0;background:var(--coral);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px}
+.tile{display:block;background:var(--page);border-radius:14px;padding:12px 14px;color:inherit;text-decoration:none;min-width:0}
+a.tile:hover{outline:2px solid var(--ink)}
+.tile .n{font:400 30px/1.05 var(--serif);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.tile .l{font-size:12px;color:var(--ink-2);margin-top:2px}
+.body{padding:0 24px}
+section{margin-top:34px;scroll-margin-top:12px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:3px solid var(--ink);padding-top:10px}
+.sh h2{font:400 26px/1.1 var(--serif);margin:0}
+.sh span{font-size:12px;color:var(--ink-3);text-align:right}
+.row{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 10px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.lead{font:400 20px/1.2 var(--serif);font-variant-numeric:tabular-nums;padding-top:1px}
+.lead.t{font:700 13px/1.6 var(--sans)}
+.dot{width:12px;height:12px;border-radius:3px;background:var(--rule);margin-top:5px}
+.dot.good{background:var(--lime);box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.dot.bad{background:var(--coral)}
+.dot.open{background:var(--purple)}
+.ti{font-weight:700}
+.me{font-size:13px;color:var(--ink-3);margin-left:6px;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px;margin-left:6px;background:var(--soft);color:var(--ink-2);white-space:nowrap;vertical-align:1px}
+.pill.bad{background:var(--coral-soft);color:var(--coral-ink)}
+.pill.good{background:var(--lime-soft);color:var(--ink)}
+.pill.open{background:var(--lilac);color:var(--purple-ink)}
+.ln{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tx{color:var(--ink-2)}
+.qt{font:400 16px/1.4 Georgia,'Times New Roman',serif;font-style:italic;margin-top:2px}
+.nx{margin-top:4px;font-weight:700}
+.nx::before{content:"Next: ";font-weight:400;color:var(--ink-3)}
+.src{font-size:12px;color:var(--ink-3);margin-top:2px}
+details.more{margin-top:6px}
+details.more summary{cursor:pointer;font-size:13px;color:var(--purple-ink);font-weight:700;width:fit-content}
+details.more .in{margin-top:6px;background:var(--soft);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ink-2)}
+details.more ol,details.more ul{margin:0;padding-left:18px}
+details.more ol{color:var(--ink)}
+details.more ol+ul{margin-top:8px}
+details.more li+li{margin-top:3px}
+.none{padding:12px 0;color:var(--ink-3);border-bottom:1px solid var(--rule)}
+.foot{font-size:13px;color:var(--ink-3);padding-top:10px}
+footer{margin:38px 24px 0;font-size:12px;color:var(--ink-3)}
+footer summary{cursor:pointer}
+footer p{max-width:640px;margin:8px 0 0}
+footer a{color:var(--ink-2)}
+footer .by{margin-top:14px}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.top{padding:22px 16px 18px}.top h1{font-size:34px}.body{padding:0 16px}footer{margin:34px 16px 0}.row{grid-template-columns:36px minmax(0,1fr)}}
 </style>
 </head>
 <body>
-<div class="wrap" id="app"></div>
+<div class="sheet" id="page"></div>
 <script>
 /* Fill in DATA only. Leave everything else as is. */
 const DATA = {
-  "name": "Sam",
-  "company": "Northbeam",
-  "date": "Tuesday, October 6",
-  "view": "My day",
+  "kind": "Daily brief",
+  "title": "Good morning, Sam.",
+  "sub": "Tuesday, October 6 · My day",
+  "tiles": [
+    {
+      "n": "3",
+      "label": "Sales calls today",
+      "to": "meetings"
+    },
+    {
+      "n": "2",
+      "label": "Buyers waiting",
+      "to": "waiting"
+    },
+    {
+      "n": "2",
+      "label": "Deals going quiet",
+      "to": "quiet"
+    },
+    {
+      "n": "3",
+      "label": "New since yesterday",
+      "to": "news"
+    }
+  ],
+  "sections": [
+    {
+      "id": "first",
+      "title": "Start here",
+      "hint": "Open any item for the steps",
+      "rows": [
+        {
+          "lead": "1",
+          "title": "Vantage",
+          "meta": "$70k",
+          "text": "Send Maya two pricing options today",
+          "source": "Promised by end of day on the 11:00 pricing sync",
+          "steps": [
+            "Build both options inside the $70K to $80K range",
+            "Include Okta SSO in each",
+            "Email Maya before 5pm"
+          ]
+        },
+        {
+          "lead": "2",
+          "title": "Kestrel",
+          "meta": "$35k",
+          "text": "Reply to Priya about the security review",
+          "source": "She's been waiting 3 days",
+          "steps": [
+            "Answer her SSO question",
+            "Offer two times for IT to join"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "news",
+      "title": "While you were out",
+      "hint": "Since Monday morning",
+      "rows": [
+        {
+          "mark": "good",
+          "title": "Helix",
+          "meta": "$240k",
+          "text": "Moved to Exec review",
+          "more": [
+            "Oct 5: Lena accepted the 1:00 exec sync (calendar)"
+          ]
+        },
+        {
+          "mark": "",
+          "title": "Northwind",
+          "meta": "$120k",
+          "text": "Alex replied and asked for revised seat counts",
+          "more": [
+            "Oct 5 email: wants 140 seats priced"
+          ]
+        },
+        {
+          "mark": "bad",
+          "title": "Orbit",
+          "meta": "$18k",
+          "text": "Close date passed, still open",
+          "more": [
+            "CRM close date Oct 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meetings",
+      "title": "Today's meetings",
+      "hint": "3 sales calls",
+      "foot": "Also: 9:00 prep block, 4:00 internal Vantage sync",
+      "rows": [
+        {
+          "lead": "10:00",
+          "title": "Lumen",
+          "meta": "Intro",
+          "lines": [
+            "Ana Ruiz (CRO) · Ben Osei (Head of RevOps)",
+            "No deal yet"
+          ],
+          "text": "First call. Ben passed in May until their Salesforce rollout finished.",
+          "next": "Run meeting prep",
+          "more": [
+            "May intro call: timing was wrong until the rollout was done"
+          ]
+        },
+        {
+          "lead": "11:00",
+          "title": "Vantage",
+          "meta": "Pricing sync",
+          "lines": [
+            "Maya Chen (Head of RevOps) · Kevin Patel (IT Security Lead)",
+            "Pricing · $70k · close Oct 30 · last heard from them 4 days ago"
+          ],
+          "text": "Maya wants options, not one number. Okta SSO is a must.",
+          "more": [
+            "Oct 2 demo: asked for pricing by Friday"
+          ]
+        },
+        {
+          "lead": "1:00",
+          "title": "Helix",
+          "meta": "Exec sync",
+          "lines": [
+            "Lena Ford (CEO)",
+            "Exec review · $240k · close Nov 14 · last heard from them 1 day ago"
+          ],
+          "text": "The board asks about churn. Deck owed before the call.",
+          "more": [
+            "Sep 30 call: churn is the number the board asks about"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "waiting",
+      "title": "Waiting on you",
+      "hint": "",
+      "rows": [
+        {
+          "mark": "bad",
+          "title": "Priya",
+          "meta": "Kestrel · email",
+          "tag": "3d waiting",
+          "tone": "bad",
+          "text": "Does SSO work with Okta?"
+        },
+        {
+          "mark": "open",
+          "title": "Alex",
+          "meta": "Northwind · email",
+          "tag": "1d waiting",
+          "tone": "open",
+          "text": "Revised seat counts for 140 seats"
+        }
+      ]
+    },
+    {
+      "id": "quiet",
+      "title": "Going quiet",
+      "hint": "2 of 22 open deals",
+      "foot": "Close out (no activity in 60+ days): Orchard Labs",
+      "rows": [
+        {
+          "mark": "bad",
+          "title": "Kestrel",
+          "meta": "$35k · Discovery",
+          "tag": "16d quiet · email",
+          "tone": "bad",
+          "text": "No two-way touch since Sep 20",
+          "next": "Answer Priya's SSO question",
+          "more": [
+            "Sep 20 call: asked about SSO",
+            "Oct 3: Priya followed up, no reply yet"
+          ]
+        },
+        {
+          "mark": "bad",
+          "title": "Orbit",
+          "meta": "$18k · Proposal",
+          "tag": "no touch logged",
+          "tone": "bad",
+          "text": "No next step, and the close date has passed",
+          "next": "Ask Dana if timing changed",
+          "more": [
+            "Per CRM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open",
+      "title": "Open time",
+      "hint": "",
+      "rows": [
+        {
+          "title": "3:00–4:00",
+          "meta": "1 hr"
+        }
+      ],
+      "empty": "No open blocks of 30 minutes or more."
+    }
+  ],
   "updated": "Oct 6, 7:02am",
-  "numbers": {
-    "calls": 3,
-    "replies": 2,
-    "atRisk": 2,
-    "changes": 3
-  },
-  "doFirst": [
-    {
-      "deal": "Vantage",
-      "amount": 70000,
-      "action": "Send Maya two pricing options today",
-      "why": "Promised by end of day on the 11:00 pricing sync",
-      "steps": [
-        "Build both options inside the $70K to $80K range",
-        "Include Okta SSO in each",
-        "Email Maya before 5pm"
-      ],
-      "context": "Oct 6 call"
-    },
-    {
-      "deal": "Kestrel",
-      "amount": 35000,
-      "action": "Reply to Priya about the security review",
-      "why": "Waiting 3 days",
-      "steps": [
-        "Answer her SSO question",
-        "Offer two times for IT to join"
-      ],
-      "context": "Oct 3 email"
-    }
-  ],
-  "sinceYesterday": [
-    {
-      "kind": "good",
-      "deal": "Helix",
-      "amount": 240000,
-      "what": "Moved to Exec review",
-      "detail": [
-        "Oct 5: Lena accepted the 1:00 exec sync (calendar)"
-      ]
-    },
-    {
-      "kind": "",
-      "deal": "Northwind",
-      "amount": 120000,
-      "what": "Alex replied: asked for revised seat counts",
-      "detail": [
-        "Oct 5 email: wants 140 seats priced"
-      ]
-    },
-    {
-      "kind": "bad",
-      "deal": "Orbit",
-      "amount": 18000,
-      "what": "Close date passed, still open",
-      "detail": [
-        "CRM close date Oct 2"
-      ]
-    }
-  ],
-  "atRisk": [
-    {
-      "deal": "Kestrel",
-      "amount": 35000,
-      "stage": "Discovery",
-      "quietDays": 16,
-      "channel": "email",
-      "why": "No two-way touch since Sep 20",
-      "next": "Answer Priya's SSO question",
-      "detail": [
-        "Sep 20 call: asked about SSO",
-        "Oct 3: Priya followed up, no reply yet"
-      ]
-    },
-    {
-      "deal": "Orbit",
-      "amount": 18000,
-      "stage": "Proposal",
-      "quietDays": null,
-      "channel": "",
-      "why": "No next step, close date passed",
-      "next": "Ask Dana if timing changed",
-      "detail": [
-        "Per CRM"
-      ]
-    }
-  ],
-  "closeOut": [
-    "Orchard Labs"
-  ],
-  "calls": [
-    {
-      "time": "10:00",
-      "company": "Lumen",
-      "type": "Intro",
-      "people": "Ana Ruiz (CRO) · Ben Osei (Head of RevOps)",
-      "deal": "No deal yet",
-      "open": "First call. Ben passed in May until their Salesforce rollout finished.",
-      "prep": "Run meeting prep",
-      "detail": [
-        "May intro call: timing was wrong until the rollout was done"
-      ]
-    },
-    {
-      "time": "11:00",
-      "company": "Vantage",
-      "type": "Pricing sync",
-      "people": "Maya Chen (Head of RevOps) · Kevin Patel (IT Security Lead)",
-      "deal": "Pricing · $70k · close Oct 30 · last two-way touch 4 days ago",
-      "open": "Maya wants options, not one number. Okta SSO is a must.",
-      "detail": [
-        "Oct 2 demo: asked for pricing by Friday"
-      ]
-    },
-    {
-      "time": "1:00",
-      "company": "Helix",
-      "type": "Exec sync",
-      "people": "Lena Ford (CEO)",
-      "deal": "Exec review · $240k · close Nov 14 · last two-way touch 1 day ago",
-      "open": "Board asks about churn. Deck owed before the call.",
-      "detail": [
-        "Sep 30 call: churn is the number the board asks about"
-      ]
-    }
-  ],
-  "otherMeetings": "9:00 prep block, 4:00 internal Vantage sync",
-  "replies": [
-    {
-      "name": "Priya",
-      "company": "Kestrel",
-      "channel": "email",
-      "ask": "Does SSO work with Okta?",
-      "waitingDays": 3,
-      "detail": [
-        "Oct 3 email"
-      ]
-    },
-    {
-      "name": "Alex",
-      "company": "Northwind",
-      "channel": "email",
-      "ask": "Revised seat counts for 140 seats",
-      "waitingDays": 1,
-      "detail": [
-        "Oct 5 email"
-      ]
-    }
-  ],
-  "team": [],
-  "openTime": [
-    {
-      "start": "3:00",
-      "end": "4:00",
-      "length": "1 hr"
-    }
-  ],
-  "howBuilt": "Sample data. Read calendar, HubSpot, Gmail and call summaries; 22 open deals."
+  "built": "Sample data with made-up companies. Read calendar, HubSpot, Gmail and call summaries; 22 open deals."
 };
 
-const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-const money = n => n == null || n === "" ? "" : n >= 1e6 ? "$" + (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M" : n >= 1e3 ? "$" + Math.round(n / 1e3) + "k" : "$" + n;
-const list = a => (a || []).filter(Boolean);
-const detailBox = d => {
-  const lines = Array.isArray(d) ? list(d) : d ? [d] : [];
-  return lines.length ? `<div class="detail"><ul>${lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>` : "";
+const ABOUT = {
+  "Daily brief": [
+    "This page is put together fresh each time from the calendar, CRM, email and calls. The sections always come in the same order. It only reads those tools. Nothing in the CRM, an inbox or a calendar was changed.",
+    "While you were out covers buyer replies, stage changes, wins, losses and signed contracts since the start of the last working day. A deal lands in Going quiet for one of three reasons: no reply, call or meeting with the buyer in 14 or more days, no dated next step, or a promised next step that didn't happen. Waiting on you lists buyers who wrote last and haven't heard back. Today's meetings shows sales calls only."
+  ],
+  "Meeting prep": [
+    "This page is put together fresh before each call from the calendar, CRM, email and calls. The sections always come in the same order. It only reads those tools. Nothing in the CRM, an inbox or a calendar was changed. It's for the seller. The buyer never sees it.",
+    "Questions to ask come from what the team needs to know at this stage and doesn't know yet. Labels on attendees, such as champion or skeptic, appear only when a call or an email backs them up. Every line says where it came from."
+  ]
 };
-const stepsBox = (steps, context) => {
-  const st = list(steps);
-  if (!st.length && !context) return "";
-  return `<div class="detail">${st.length ? `<ol>${st.map(x => `<li>${esc(x)}</li>`).join("")}</ol>` : ""}${context ? `<div class="ctx">${esc(context)}</div>` : ""}</div>`;
-};
-const item = (mark, title, sub, detail, box0, cls) => {
-  const body = `<div class="row${cls ? " " + cls : ""}">${mark}<div>${title}${sub ? `<div class="sub2">${sub}</div>` : ""}</div></div>`;
-  const box = box0 || detailBox(detail);
-  return box ? `<details class="item"><summary>${body}</summary>${box}</details>` : `<div class="item">${body}</div>`;
-};
-const quiet = d => d.quietDays == null ? `<span class="tag r">no touch logged</span>` : `<span class="tag ${d.quietDays >= 14 ? "r" : "n"}">${d.quietDays === 0 ? "today" : d.quietDays + "d quiet"}${d.channel ? " · " + esc(d.channel) : ""}</span>`;
-const kindMark = k => k === "good" ? `<span class="tick">✓</span>` : `<span class="mark dot ${k === "bad" ? "r" : ""}"></span>`;
-const D = DATA, N = D.numbers, team = list(D.team).length > 0;
-
-const go = id => `href="#${id}" onclick="const t=document.getElementById('${id}');if(t){t.scrollIntoView({behavior:'smooth'});}return false;"`;
-const cols = items => items.length ? `<div class="cols">${items.join("")}</div>` : "";
-const AR = list(D.atRisk), cap = team ? 6 : 5;
-
-let h = "";
-h += `<section class="hero"><h1>${team ? esc(D.company || "Sales team") + " daily brief" : esc(D.name) + "'s daily brief"}</h1><p class="sub">${esc([D.date, D.view].filter(Boolean).join(" · "))}</p>`;
-h += `<div class="stats num">
-  <a class="stat" ${go("calls")}><div class="n">${N.calls}</div><div class="l">Sales calls today</div></a>
-  <a class="stat" ${go("replies")}><div class="n">${N.replies}</div><div class="l">Replies waiting</div></a>
-  <a class="stat" ${go("at-risk")}><div class="n">${N.atRisk}</div><div class="l"><span class="key r-fill"></span>Deals at risk</div></a>
-  <a class="stat" ${go("since")}><div class="n">${N.changes}</div><div class="l">New since yesterday</div></a>
-</div></section>`;
-
-h += `<section class="card" id="do-first"><div class="head"><span class="chip">Do first</span><span class="hint">Open any item for the steps</span></div>`;
-h += list(D.doFirst).length ? cols(list(D.doFirst).map((t, i) => item(`<span class="num-badge">${i + 1}</span>`, `<span class="title">${esc(t.deal)}</span><span class="who num">${esc([money(t.amount), t.owner].filter(Boolean).join(" · "))}</span><div>${esc(t.action)}</div>`, esc(t.why), null, stepsBox(t.steps, t.context) || detailBox(t.detail) || detailBox(t.why ? [t.why] : [])))) : `<div class="empty">Nothing urgent today.</div>`;
-h += `</section>`;
-
-h += `<section class="card" id="since"><div class="head"><span class="chip">New since yesterday</span><span class="hint">Replies, stage moves, wins and losses</span></div>`;
-h += list(D.sinceYesterday).length ? cols(list(D.sinceYesterday).map(s => item(kindMark(s.kind), `<span class="title">${esc(s.deal)}</span><span class="who">${esc([money(s.amount), s.owner].filter(Boolean).join(" · "))}</span>`, esc(s.what), s.detail))) : `<div class="empty">Nothing changed since yesterday.</div>`;
-h += `</section>`;
-
-h += `<section class="card" id="at-risk"><div class="head"><span class="chip">${team ? "Biggest at risk" : "At risk"}</span><span class="hint">${AR.length > cap || N.atRisk > cap ? `Top ${Math.min(cap, AR.length)} of ${Math.max(N.atRisk, AR.length)}` : ""}</span></div>`;
-if (AR.length) {
-  h += cols(AR.slice(0, cap).map(d => item(`<span class="mark dot r"></span>`,
-    `<span class="title">${esc(d.deal)}</span><span class="who num">${esc([money(d.amount), d.owner, d.stage].filter(Boolean).join(" · "))}</span><div class="qline">${quiet(d)}</div>`,
-    `${esc(d.why)}<div class="next">${esc(d.next)}</div>`, d.detail)));
-  const rest = AR.slice(cap);
-  if (rest.length) h += `<div class="more">${rest.length} more${team ? ", grouped by rep in Team below" : ": " + esc(rest.map(d => d.deal).join(", "))}</div>`;
-} else h += `<div class="empty">No deals at risk today.</div>`;
-if (list(D.closeOut).length) h += `<div class="more">Close out (${list(D.closeOut).length}, no activity in 60+ days): ${esc(list(D.closeOut).join(", "))}</div>`;
-h += `</section>`;
-
-if (team) {
-  const repBox = r => {
-    const mine = AR.filter(d => d.owner === r.name).map(d => [d.deal, money(d.amount), d.stage].filter(Boolean).join(" · ") + ": " + (d.why || ""));
-    return detailBox([...mine, ...(Array.isArray(r.detail) ? r.detail : r.detail ? [r.detail] : [])]);
-  };
-  h += `<section class="card" id="team"><div class="head"><span class="chip">Team</span><span class="hint">Most at risk first · open a rep for their deals</span></div>`;
-  h += list(D.team).map(r => item(`<span class="mark dot ${r.atRiskCount ? "r" : "g"}"></span>`,
-    `<div class="rep-row"><div><span class="title">${esc(r.name)}</span><div class="meta num">${r.closingCount || 0} closing this week</div></div><div><span class="sub2">${esc(r.ask)}</span>${r.atRiskCount ? `<span class="tag r">${r.atRiskCount} at risk</span>` : `<span class="tag g">On track</span>`}</div></div>`,
-    "", null, repBox(r))).join("");
-  h += `</section>`;
+const safe = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const arr = v => (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
+const tone = t => ["good", "bad", "open"].includes(t) ? " " + t : "";
+const slug = s => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+function row(r) {
+  const lead = r.lead ? `<div class="lead${/[:apm]/i.test(r.lead) ? " t" : ""}">${safe(r.lead)}</div>` : `<div><div class="dot${tone(r.mark)}"></div></div>`;
+  const head = (r.title || r.meta || r.tag) ? `<div>${r.title ? `<span class="ti">${safe(r.title)}</span>` : ""}${r.meta ? `<span class="me">${safe(r.meta)}</span>` : ""}${r.tag ? `<span class="pill${tone(r.tone)}">${safe(r.tag)}</span>` : ""}</div>` : "";
+  const steps = arr(r.steps), more = arr(r.more);
+  const extra = steps.length || more.length ? `<details class="more"><summary>${steps.length ? "How" : "Details"}</summary><div class="in">${steps.length ? `<ol>${steps.map(s => `<li>${safe(s)}</li>`).join("")}</ol>` : ""}${more.length ? `<ul>${more.map(s => `<li>${safe(s)}</li>`).join("")}</ul>` : ""}</div></details>` : "";
+  return `<div class="row">${lead}<div>${head}${arr(r.lines).map(l => `<div class="ln">${safe(l)}</div>`).join("")}${r.text ? `<div class="tx">${safe(r.text)}</div>` : ""}${r.quote ? `<div class="qt">“${safe(r.quote)}”</div>` : ""}${r.next ? `<div class="nx">${safe(r.next)}</div>` : ""}${r.source ? `<div class="src">${safe(r.source)}</div>` : ""}${extra}</div></div>`;
 }
-
-h += `<section class="card" id="calls"><div class="head"><span class="chip">Today's calls</span><span class="hint">${list(D.calls).length ? list(D.calls).length + " sales calls" : ""}</span></div>`;
-h += list(D.calls).length ? list(D.calls).map(c => item(`<span class="time num">${esc(c.time)}</span>`,
-  `<span class="title">${esc(c.company)}</span><span class="who">${esc(c.type)}</span><div class="meta">${esc(c.people)}</div><div class="meta num">${esc(c.deal)}</div>`,
-  `${esc(c.open)}${c.prep ? `<div class="next">${esc(c.prep)}</div>` : ""}`, c.detail, "", "t")).join("") : `<div class="empty">No sales calls today.</div>`;
-if (D.otherMeetings) h += `<div class="more">Also: ${esc(D.otherMeetings)}</div>`;
-h += `</section>`;
-
-h += `<section class="card" id="replies"><div class="head"><span class="chip">Replies waiting</span><span class="hint">${list(D.replies).length || ""}</span></div>`;
-h += list(D.replies).length ? cols(list(D.replies).map(r => item(`<span class="mark dot ${r.waitingDays >= 2 ? "r" : "y"}"></span>`, `<span class="title">${esc(r.name)}</span><span class="who">${esc([r.company, r.channel].filter(Boolean).join(" · "))}</span>`, `${esc(r.ask)} <span class="tag ${r.waitingDays >= 2 ? "r" : "y"}">${r.waitingDays === 0 ? "today" : r.waitingDays + "d waiting"}</span>`, r.detail))) : `<div class="empty">No buyer is waiting on a reply.</div>`;
-h += `</section>`;
-
-h += `<section class="card" id="open-time"><div class="head"><span class="chip">Open time</span></div>`;
-h += list(D.openTime).length ? cols(list(D.openTime).map(o => `<div class="item"><div class="row"><span class="mark dot g"></span><div><span class="title num">${esc(o.start)}–${esc(o.end)}</span><span class="who">${esc(o.length)}</span></div></div></div>`)) : `<div class="empty">No open blocks of 30+ minutes.</div>`;
-h += `</section>`;
-
-h += `<footer><details><summary>How this report works</summary><div class="about">
-<p>This page is rebuilt from the calendar, CRM, email and calls every time it runs. The layout and order never change, so each section is always where it was yesterday. It reads those tools and nothing more: nothing in the CRM, an inbox or a calendar was changed.</p>
-<p><b>New since yesterday</b> is buyer replies, stage changes, wins, losses and signed contracts since the start of the last working day. A deal is <b>at risk</b> for one of three reasons: no two-way contact in 14 or more days, no dated next step, or a promised next step that didn't happen. <b>Slipped</b> means the close date has passed and the deal is still open. <b>Close out</b> lists deals with no activity in 60 or more days, to close with a reason or restart. <b>Replies waiting</b> are buyers who wrote last and haven't heard back. <b>Today's calls</b> are sales calls only. Other meetings get one line underneath.</p>
-<p>Open the arrow on any row for the details and where they came from.</p>
-<p><b>Today:</b> ${esc(D.howBuilt)}</p></div></details><span>Updated ${esc(D.updated)} · Built with Sales Skills by <a href="https://www.mutinyhq.com/?utm_source=sales-skills&utm_medium=report&utm_campaign=daily-brief" target="_blank" rel="noopener">Mutiny</a></span></footer>`;
-document.getElementById("app").innerHTML = h;
+const P = DATA, secs = arr(P.sections);
+let out = `<header class="top"><div class="kind">${safe(P.kind)}</div><h1>${safe(P.title)}</h1>${P.sub ? `<p class="sub">${safe(P.sub)}</p>` : ""}${arr(P.notes).map(n => `<p class="note">${safe(n)}</p>`).join("")}${P.alert ? `<div class="alert">${safe(P.alert)}</div>` : ""}`;
+if (arr(P.tiles).length) out += `<div class="tiles">${arr(P.tiles).map(t => t.to ? `<a class="tile" href="#${slug(t.to)}"><div class="n">${safe(t.n)}</div><div class="l">${safe(t.label)}</div></a>` : `<div class="tile"><div class="n">${safe(t.n)}</div><div class="l">${safe(t.label)}</div></div>`).join("")}</div>`;
+out += `</header><div class="body">`;
+out += secs.map(s => `<section id="${slug(s.id || s.title)}"><div class="sh"><h2>${safe(s.title)}</h2><span>${safe(s.hint)}</span></div>${arr(s.rows).length ? arr(s.rows).map(row).join("") : `<div class="none">${safe(s.empty || "Nothing here today.")}</div>`}${s.foot ? `<div class="foot">${safe(s.foot)}</div>` : ""}</section>`).join("");
+out += `</div><footer><details><summary>How this page works</summary>${(ABOUT[P.kind] || []).map(p => `<p>${safe(p)}</p>`).join("")}<p>This run: ${safe(P.built)}</p></details><div class="by">Updated ${safe(P.updated)} · Built with Sales Skills by <a href="https://www.mutinyhq.com/?utm_source=sales-skills&utm_medium=report&utm_campaign=${slug(P.kind)}" target="_blank" rel="noopener">Mutiny</a></div></footer>`;
+document.getElementById("page").innerHTML = out;
+document.title = [P.kind, P.title].filter(Boolean).join(" · ");
 </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 ---
 name: mutiny-follow-up
-description: "Mutiny follow-up, from Sales Skills by Mutiny. Run right after a sales call: finds your most recent call on its own, then drafts the follow-up email in your voice, so it sounds like you and not like AI, and the CRM update from what was said (next step, stage, competitors mentioned, follow-up tasks with dates) using your CRM's own field names. Nothing is sent, and nothing goes into the CRM until you approve the exact changes; without CRM write access you get a copy-paste version. Adds resources to send only when the buyer asked for something, and names the asset to build when the buyer asked for pricing options, a business case or one place for everything. Use whenever someone says 'Run my Mutiny follow-up', 'Run the Mutiny follow-up on [company]', 'Run my Mutiny post-call', 'write the follow-up from my last call', 'update the CRM from that meeting', 'log my call', or wants a recap email, CRM notes or follow-up tasks after a meeting."
+description: "Mutiny follow-up, from Sales Skills by Mutiny. They take the meeting, this does the rest. Run it right after a sales call: it finds the call without being told which one, writes the follow-up email the way the rep writes so it sounds like them and not like AI, and lines up the CRM update from what was actually said: next step, stage, competitors, tasks with dates, in the CRM's own field names. Nothing is sent and nothing is saved to the CRM until the rep approves the exact changes; with a read-only CRM they get a version to paste. It also flags what the buyer asked for, whether that's a link or a pricing proposal, business case or deal room to build. Use whenever someone says 'Run my Mutiny follow-up', 'Run the Mutiny follow-up on [company]', 'Run my Mutiny post-call', 'write the follow-up from my last call', 'update the CRM from that meeting', 'log my call', or wants a recap email, CRM notes or tasks after a meeting."
 ---
 
 
@@ -12,7 +12,7 @@ They took the meeting. You do the rest: everything a rep has to do in the ten mi
 | **CRM update** | Next step, stage, competitors that came up, any other field the call answered, follow-up tasks with dates, and a short call note. In the CRM's own field names. Nothing changes until they approve the exact edits |
 | **Resources to send** | Only when the buyer asked for something a real page on the seller's site answers |
 | **Asset to build** | Only when the buyer asked for pricing options, something for their exec, or one place with everything |
-| **Gaps** | What the next call has to find out, written as questions |
+| **For next time** | What the next call has to find out, written as questions |
 
 ## Step 1: Find the call
 
@@ -88,41 +88,51 @@ Only when the call supports it. Otherwise leave this out.
 
 **Gaps.** Up to three things the deal still needs, measured against how they qualify and the stage's exit criteria (no decision maker named, budget never discussed). Give each one with the question to ask.
 
-## Output format
+## What they see
+
+Lay it out like this, with these headers, every time:
 
 ```
-Call: [Company] · [date, time] · [attendees] · [source]
+**Mutiny follow-up** · [Company] · [call date and time]
+From [where the call came from], with [attendees].
 
-**Follow-up email**
-Subject: [specific to this call]
-To: [recipient]
+## Email to [buyer's first name]
 
-[Body in their voice]
+**To:** [recipient]
+**Subject:** [specific to this call]
 
-**CRM update** ([CRM name] · [deal name])
-| Field | Now | Change to |
+[The email, in their voice]
+
+## [CRM name] update
+
+[Deal name]
+
+| Field | Now | After |
 |---|---|---|
 | [Next step] | [current] | [new] |
-| [Stage] | [current] | [new] ([why, in a few words]) |
+| [Stage] | [current] | [new], because [a few words] |
 | [Competitor field] | [current] | [names] |
 
-Tasks
-- [ ] [Task] · due [date]
-- [ ] [Task] · due [date]
+**Tasks**
+- [ ] [Task], due [date]
+- [ ] [Task], due [date]
 
-Note: [3–5 lines]
+**Call note**
+[3–5 lines]
 
-[Apply question, or "Copy these into [CRM]."]
+[The apply question, or "Copy these into [CRM]."]
 
-**Resources to send** (only if earned)
-- [What they asked] → [page title]: [URL]
+## They also asked for
 
-**Asset to build** (only if earned)
-- They asked for [thing] → [pricing proposal / business case / deal room]
+- [What they asked for]: [page title], [URL]
+- [What they asked for]: I can build the [pricing proposal / business case / deal room]
 
-**For the next call**
-- [Gap]: ask "[question]"
+## For next time
+
+- "[The question to ask]" It settles [the gap].
 ```
+
+Leave out "They also asked for" when the buyer didn't ask for anything, and "For next time" when the deal has no gaps.
 
 Finish with one offer they can take by saying "yes." If the buyer asked for an asset, offer that. If not, offer prep for the next call when one is on the calendar, or a check-in on another deal that came up. If nothing fits, don't offer anything.
 
@@ -137,7 +147,7 @@ Finish with one offer they can take by saying "yes." If the buyer asked for an a
 
 ## Rules
 
-- **Only what you can trace.** Every fact comes from the call, the CRM, email or the person. A commitment you made up or a CRM field you guessed does more harm than a blank. Leave it out and list it under "For the next call."
+- **Only what you can trace.** Every fact comes from the call, the CRM, email or the person. A commitment you made up or a CRM field you guessed does more harm than a blank. Leave it out and raise it under "For next time."
 - **Nothing goes out without a yes.** Never send the email. Change the CRM only after the person approves the exact edits.
 - **Their voice, the buyer's words.** The email sounds like the rep and quotes the buyer where it helps.
 - **No buyer details in anything saved** to their profile or notes files. Deal details belong on the CRM record.

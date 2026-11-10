@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mutiny</title>
+<style>
+:root{color-scheme:light;--purple:#A73BF5;--lilac:#F2D1FC;--lime:#B2FF14;--lime-soft:#D2FD78;--coral:#FB5A3D;--coral-ink:#B92C12;--coral-soft:#FFE1DA;--purple-ink:#6A1BA6;--ink:#000;--ink-2:rgba(0,0,0,.72);--ink-3:rgba(0,0,0,.54);--rule:rgba(0,0,0,.14);--page:#FFFFFF;--soft:#F4F4F2;--serif:'Reckless Condensed S',Georgia,'Times New Roman',serif;--sans:'KMR Waldenburg',Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+.sheet{max-width:780px;margin:0 auto;padding:0 0 48px}
+.top{background:var(--lilac);padding:26px 24px 22px;border-radius:0 0 22px 22px}
+.kind{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+.top h1{font:400 44px/1.02 var(--serif);letter-spacing:-.3px;margin:10px 0 6px;text-wrap:balance}
+.top .sub{font-size:16px;margin:0;color:var(--ink-2)}
+.top .note{font-size:14px;margin:6px 0 0;color:var(--ink-2)}
+.alert{margin:14px 0 0;background:var(--coral);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px}
+.tile{display:block;background:var(--page);border-radius:14px;padding:12px 14px;color:inherit;text-decoration:none;min-width:0}
+a.tile:hover{outline:2px solid var(--ink)}
+.tile .n{font:400 30px/1.05 var(--serif);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.tile .l{font-size:12px;color:var(--ink-2);margin-top:2px}
+.body{padding:0 24px}
+section{margin-top:34px;scroll-margin-top:12px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:3px solid var(--ink);padding-top:10px}
+.sh h2{font:400 26px/1.1 var(--serif);margin:0}
+.sh span{font-size:12px;color:var(--ink-3);text-align:right}
+.row{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 10px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.lead{font:400 20px/1.2 var(--serif);font-variant-numeric:tabular-nums;padding-top:1px}
+.lead.t{font:700 13px/1.6 var(--sans)}
+.dot{width:12px;height:12px;border-radius:3px;background:var(--rule);margin-top:5px}
+.dot.good{background:var(--lime);box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.dot.bad{background:var(--coral)}
+.dot.open{background:var(--purple)}
+.ti{font-weight:700}
+.me{font-size:13px;color:var(--ink-3);margin-left:6px;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px;margin-left:6px;background:var(--soft);color:var(--ink-2);white-space:nowrap;vertical-align:1px}
+.pill.bad{background:var(--coral-soft);color:var(--coral-ink)}
+.pill.good{background:var(--lime-soft);color:var(--ink)}
+.pill.open{background:var(--lilac);color:var(--purple-ink)}
+.ln{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tx{color:var(--ink-2)}
+.qt{font:400 16px/1.4 Georgia,'Times New Roman',serif;font-style:italic;margin-top:2px}
+.nx{margin-top:4px;font-weight:700}
+.nx::before{content:"Next: ";font-weight:400;color:var(--ink-3)}
+.src{font-size:12px;color:var(--ink-3);margin-top:2px}
+details.more{margin-top:6px}
+details.more summary{cursor:pointer;font-size:13px;color:var(--purple-ink);font-weight:700;width:fit-content}
+details.more .in{margin-top:6px;background:var(--soft);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ink-2)}
+details.more ol,details.more ul{margin:0;padding-left:18px}
+details.more ol{color:var(--ink)}
+details.more ol+ul{margin-top:8px}
+details.more li+li{margin-top:3px}
+.none{padding:12px 0;color:var(--ink-3);border-bottom:1px solid var(--rule)}
+.foot{font-size:13px;color:var(--ink-3);padding-top:10px}
+footer{margin:38px 24px 0;font-size:12px;color:var(--ink-3)}
+footer summary{cursor:pointer}
+footer p{max-width:640px;margin:8px 0 0}
+footer a{color:var(--ink-2)}
+footer .by{margin-top:14px}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.top{padding:22px 16px 18px}.top h1{font-size:34px}.body{padding:0 16px}footer{margin:34px 16px 0}.row{grid-template-columns:36px minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<div class="sheet" id="page"></div>
+<script>
+/* Fill in DATA only. Leave everything else as is. */
+const DATA = {
+  kind: "[Daily brief | Meeting prep]",
+  title: "[The page's headline]",
+  sub: "[One line under it]",
+  notes: [],
+  alert: "",
+  tiles: [],
+  sections: [],
+  updated: "[date, time]",
+  built: "[What was read, and anything missing]"
+};
+
+const ABOUT = {
+  "Daily brief": [
+    "This page is put together fresh each time from the calendar, CRM, email and calls. The sections always come in the same order. It only reads those tools. Nothing in the CRM, an inbox or a calendar was changed.",
+    "While you were out covers buyer replies, stage changes, wins, losses and signed contracts since the start of the last working day. A deal lands in Going quiet for one of three reasons: no reply, call or meeting with the buyer in 14 or more days, no dated next step, or a promised next step that didn't happen. Waiting on you lists buyers who wrote last and haven't heard back. Today's meetings shows sales calls only."
+  ],
+  "Meeting prep": [
+    "This page is put together fresh before each call from the calendar, CRM, email and calls. The sections always come in the same order. It only reads those tools. Nothing in the CRM, an inbox or a calendar was changed. It's for the seller. The buyer never sees it.",
+    "Questions to ask come from what the team needs to know at this stage and doesn't know yet. Labels on attendees, such as champion or skeptic, appear only when a call or an email backs them up. Every line says where it came from."
+  ]
+};
+const safe = v => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const arr = v => (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
+const tone = t => ["good", "bad", "open"].includes(t) ? " " + t : "";
+const slug = s => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+function row(r) {
+  const lead = r.lead ? `<div class="lead${/[:apm]/i.test(r.lead) ? " t" : ""}">${safe(r.lead)}</div>` : `<div><div class="dot${tone(r.mark)}"></div></div>`;
+  const head = (r.title || r.meta || r.tag) ? `<div>${r.title ? `<span class="ti">${safe(r.title)}</span>` : ""}${r.meta ? `<span class="me">${safe(r.meta)}</span>` : ""}${r.tag ? `<span class="pill${tone(r.tone)}">${safe(r.tag)}</span>` : ""}</div>` : "";
+  const steps = arr(r.steps), more = arr(r.more);
+  const extra = steps.length || more.length ? `<details class="more"><summary>${steps.length ? "How" : "Details"}</summary><div class="in">${steps.length ? `<ol>${steps.map(s => `<li>${safe(s)}</li>`).join("")}</ol>` : ""}${more.length ? `<ul>${more.map(s => `<li>${safe(s)}</li>`).join("")}</ul>` : ""}</div></details>` : "";
+  return `<div class="row">${lead}<div>${head}${arr(r.lines).map(l => `<div class="ln">${safe(l)}</div>`).join("")}${r.text ? `<div class="tx">${safe(r.text)}</div>` : ""}${r.quote ? `<div class="qt">“${safe(r.quote)}”</div>` : ""}${r.next ? `<div class="nx">${safe(r.next)}</div>` : ""}${r.source ? `<div class="src">${safe(r.source)}</div>` : ""}${extra}</div></div>`;
+}
+const P = DATA, secs = arr(P.sections);
+let out = `<header class="top"><div class="kind">${safe(P.kind)}</div><h1>${safe(P.title)}</h1>${P.sub ? `<p class="sub">${safe(P.sub)}</p>` : ""}${arr(P.notes).map(n => `<p class="note">${safe(n)}</p>`).join("")}${P.alert ? `<div class="alert">${safe(P.alert)}</div>` : ""}`;
+if (arr(P.tiles).length) out += `<div class="tiles">${arr(P.tiles).map(t => t.to ? `<a class="tile" href="#${slug(t.to)}"><div class="n">${safe(t.n)}</div><div class="l">${safe(t.label)}</div></a>` : `<div class="tile"><div class="n">${safe(t.n)}</div><div class="l">${safe(t.label)}</div></div>`).join("")}</div>`;
+out += `</header><div class="body">`;
+out += secs.map(s => `<section id="${slug(s.id || s.title)}"><div class="sh"><h2>${safe(s.title)}</h2><span>${safe(s.hint)}</span></div>${arr(s.rows).length ? arr(s.rows).map(row).join("") : `<div class="none">${safe(s.empty || "Nothing here today.")}</div>`}${s.foot ? `<div class="foot">${safe(s.foot)}</div>` : ""}</section>`).join("");
+out += `</div><footer><details><summary>How this page works</summary>${(ABOUT[P.kind] || []).map(p => `<p>${safe(p)}</p>`).join("")}<p>This run: ${safe(P.built)}</p></details><div class="by">Updated ${safe(P.updated)} · Built with Sales Skills by <a href="https://www.mutinyhq.com/?utm_source=sales-skills&utm_medium=report&utm_campaign=${slug(P.kind)}" target="_blank" rel="noopener">Mutiny</a></div></footer>`;
+document.getElementById("page").innerHTML = out;
+document.title = [P.kind, P.title].filter(Boolean).join(" · ");
+</script>
+</body>
+</html>

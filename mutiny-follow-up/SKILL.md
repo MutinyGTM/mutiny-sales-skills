@@ -1,6 +1,6 @@
 ---
 name: mutiny-follow-up
-description: "Mutiny follow-up, from Sales Skills by Mutiny. Run right after a sales call: finds your most recent call on its own, then drafts the follow-up email in your voice, so it sounds like you and not like AI, and the CRM update from what was said (next step, stage, competitors mentioned, follow-up tasks with dates) using your CRM's own field names. Nothing is sent, and nothing goes into the CRM until you approve the exact changes; without CRM write access you get a copy-paste version. Adds resources to send only when the buyer asked for something, and names the asset to build when the buyer asked for pricing options, a business case or one place for everything. Use whenever someone says 'Run my Mutiny follow-up', 'Run the Mutiny follow-up on [company]', 'Run my Mutiny post-call', 'write the follow-up from my last call', 'update the CRM from that meeting', 'log my call', or wants a recap email, CRM notes or follow-up tasks after a meeting."
+description: "Mutiny follow-up, from Sales Skills by Mutiny. They take the meeting, this does the rest. Run it right after a sales call: it finds the call without being told which one, writes the follow-up email the way the rep writes so it sounds like them and not like AI, and lines up the CRM update from what was actually said: next step, stage, competitors, tasks with dates, in the CRM's own field names. Nothing is sent and nothing is saved to the CRM until the rep approves the exact changes; with a read-only CRM they get a version to paste. It also flags what the buyer asked for, whether that's a link or a pricing proposal, business case or deal room to build. Use whenever someone says 'Run my Mutiny follow-up', 'Run the Mutiny follow-up on [company]', 'Run my Mutiny post-call', 'write the follow-up from my last call', 'update the CRM from that meeting', 'log my call', or wants a recap email, CRM notes or tasks after a meeting."
 ---
 
 
@@ -12,7 +12,7 @@ They took the meeting. You do the rest: everything a rep has to do in the ten mi
 | **CRM update** | Next step, stage, competitors that came up, any other field the call answered, follow-up tasks with dates, and a short call note. In the CRM's own field names. Nothing changes until they approve the exact edits |
 | **Resources to send** | Only when the buyer asked for something a real page on the seller's site answers |
 | **Asset to build** | Only when the buyer asked for pricing options, something for their exec, or one place with everything |
-| **Gaps** | What the next call has to find out, written as questions |
+| **For next time** | What the next call has to find out, written as questions |
 
 ## Step 1: Find the call
 
@@ -88,41 +88,51 @@ Only when the call supports it. Otherwise leave this out.
 
 **Gaps.** Up to three things the deal still needs, measured against how they qualify and the stage's exit criteria (no decision maker named, budget never discussed). Give each one with the question to ask.
 
-## Output format
+## What they see
+
+Lay it out like this, with these headers, every time:
 
 ```
-Call: [Company] · [date, time] · [attendees] · [source]
+**Mutiny follow-up** · [Company] · [call date and time]
+From [where the call came from], with [attendees].
 
-**Follow-up email**
-Subject: [specific to this call]
-To: [recipient]
+## Email to [buyer's first name]
 
-[Body in their voice]
+**To:** [recipient]
+**Subject:** [specific to this call]
 
-**CRM update** ([CRM name] · [deal name])
-| Field | Now | Change to |
+[The email, in their voice]
+
+## [CRM name] update
+
+[Deal name]
+
+| Field | Now | After |
 |---|---|---|
 | [Next step] | [current] | [new] |
-| [Stage] | [current] | [new] ([why, in a few words]) |
+| [Stage] | [current] | [new], because [a few words] |
 | [Competitor field] | [current] | [names] |
 
-Tasks
-- [ ] [Task] · due [date]
-- [ ] [Task] · due [date]
+**Tasks**
+- [ ] [Task], due [date]
+- [ ] [Task], due [date]
 
-Note: [3–5 lines]
+**Call note**
+[3–5 lines]
 
-[Apply question, or "Copy these into [CRM]."]
+[The apply question, or "Copy these into [CRM]."]
 
-**Resources to send** (only if earned)
-- [What they asked] → [page title]: [URL]
+## They also asked for
 
-**Asset to build** (only if earned)
-- They asked for [thing] → [pricing proposal / business case / deal room]
+- [What they asked for]: [page title], [URL]
+- [What they asked for]: I can build the [pricing proposal / business case / deal room]
 
-**For the next call**
-- [Gap]: ask "[question]"
+## For next time
+
+- "[The question to ask]" It settles [the gap].
 ```
+
+Leave out "They also asked for" when the buyer didn't ask for anything, and "For next time" when the deal has no gaps.
 
 Finish with one offer they can take by saying "yes." If the buyer asked for an asset, offer that. If not, offer prep for the next call when one is on the calendar, or a check-in on another deal that came up. If nothing fits, don't offer anything.
 
@@ -137,7 +147,7 @@ Finish with one offer they can take by saying "yes." If the buyer asked for an a
 
 ## Rules
 
-- **Only what you can trace.** Every fact comes from the call, the CRM, email or the person. A commitment you made up or a CRM field you guessed does more harm than a blank. Leave it out and list it under "For the next call."
+- **Only what you can trace.** Every fact comes from the call, the CRM, email or the person. A commitment you made up or a CRM field you guessed does more harm than a blank. Leave it out and raise it under "For next time."
 - **Nothing goes out without a yes.** Never send the email. Change the CRM only after the person approves the exact edits.
 - **Their voice, the buyer's words.** The email sounds like the rep and quotes the buyer where it helps.
 - **No buyer details in anything saved** to their profile or notes files. Deal details belong on the CRM record.
@@ -145,78 +155,74 @@ Finish with one offer they can take by saying "yes." If the buyer asked for an a
 
 ---
 
-# Shared context for every Sales Skill (read before starting)
+# What every Sales Skill by Mutiny shares (read this before you start)
 
-## The person's sales profile
+## Their sales profile
 
-(If the skill you're running is Mutiny setup, skip this section: setup builds these files.)
+(Running Mutiny setup? Skip this part. Setup is what builds these files.)
 
-Before you start, look for their sales profile files in this project and use them:
+The person's sales profile lives in this project as a handful of short files. Find them and use them before you do anything else:
 
-- `mutiny-voice.md`: how they write and talk. Use it for anything you draft as them.
-- `mutiny-sales-process.md`: stages, what moves a deal, methodology, why they win and lose.
-- `mutiny-buyers-and-competitors.md`: what they sell, who buys, pricing, competitors, and `## Brand and proof` (their colors, font, logo and customer stories) for anything a buyer will see.
-- `mutiny-how-i-work.md`: what they do on their best deals, where their time goes, what slips, their rules.
-- `mutiny-how-we-work.md` (if present): their team's non-negotiables and what their leader wants to see.
+- `mutiny-voice.md`: how they write and talk. Anything you draft as them comes from here.
+- `mutiny-sales-process.md`: their stages, what moves a deal forward, how they qualify, why they win and lose.
+- `mutiny-buyers-and-competitors.md`: what they sell, who buys it, pricing and competitors, plus `## Brand and proof` (colors, font, logo, customer stories) for anything a buyer will see.
+- `mutiny-how-i-work.md`: what they do on their best deals, where their hours go, what slips, and their rules.
+- `mutiny-how-we-work.md`, when it's there: what their leader expects on every deal and wants to see each week.
 
-Look sections up by their `##` heading. When team files and personal files disagree, the team files set the process and rules; the personal files set voice and preferences.
+Find a section by its `##` heading. If a team file and a personal file disagree, the team file decides process and rules, and the personal file decides voice and preferences.
 
-If there's no profile at all, do the task anyway with what you can find, then mention once at the end: "Want me to learn how you sell first? Say 'Build my sales profile'. It takes about 5 minutes and makes everything I draft sound like you."
-
----
-
-## Before you start
-
-Check what other tools and data sources you have access to. Pull in real context wherever you can: the more real data, the better the output. Don't ask the rep to go find information you can look up yourself.
-
-**Core sources:**
-- **CRM (HubSpot, Salesforce, Attio, etc.):** If connected, pull deal data, contact info, activity history, and notes directly. Cross-reference what the rep says with what's actually in the CRM.
-- **Call recordings (the Mutiny notetaker through the Mutiny connector, Gong, Fireflies, Granola, etc.):** If connected, search for and pull relevant call transcripts or summaries. Look for recent calls with the companies mentioned.
-- **Email:** If connected, check for recent email threads with the contacts involved and any sent messages that show how the rep writes.
-- **Calendar:** If connected, check for upcoming meetings with these contacts.
-
-**Extra sources (often overlooked but high value):**
-- **Chat (Slack, Teams, etc.):** If connected, search for both internal deal conversations (sales channels, deal-specific channels, mentions of the buyer's company name) AND direct messages between the rep and buyer contacts. Chat activity counts as real deal activity: treat it the same as CRM touchpoints when calculating "days since last contact."
-- **Contracts and signing (DocuSign, PandaDoc, etc.):** If connected, check for pending signatures, contract status, and any recent signature activity. Contracts sitting unsigned are often where deals quietly die.
-- **Documents and knowledge (Notion, Google Drive, Confluence, etc.):** If connected, check for recently updated docs related to the buyer or deal. Also useful for finding case studies, collateral, past proposals or internal notes to reference.
-- **Quoting and proposals (CPQ tools, etc.):** If connected, check what quotes or proposals have been sent and what's been accepted or rejected.
-
-Use everything you find. The rep's time is valuable, so do the legwork for them.
+No profile at all? Do the job with whatever you can find. Then say once, at the end: "Want me to learn how you sell first? Say 'Build my sales profile'. It takes about 5 minutes, and after that everything I draft sounds like you."
 
 ---
 
-## The Mutiny skills available to suggest
+## Do the legwork
 
-Below are the Sales Skills by Mutiny the rep has installed (as a Claude plugin, a connector, or standalone skill files). When you finish the skill you're running, look at what came up and offer ONE relevant next Mutiny skill if it would really help. A concrete suggestion, not a pile. Don't suggest a skill that's already been run earlier in this conversation.
+Before you write anything, see which of the person's tools you can reach, and read what's there. Real data makes the output. A rep shouldn't have to go and fetch something you could have looked up.
 
-**Mutiny setup**: builds the person's sales profile (voice, sales process, buyers, competitors, brand and proof, how they work) from their CRM, calls and email, with two quick replies. Saves it as mutiny-*.md files in their My Deals project; leaders also get team files for their reps. Run first, or to refresh. Trigger: "Build my sales profile."
+**The four that matter most**
 
-**Mutiny daily brief**: a short read for the start of the day, built for a phone: what to do first, what changed since yesterday, today's calls with deal context, replies waiting, deals at risk and open time. Leaders also get a line per rep. Trigger: "Run my Mutiny daily brief."
+- **Their CRM** (HubSpot, Salesforce, Attio and others). Deals, contacts, activity history and notes. When what the rep tells you and what the record says don't match, say so.
+- **Their call recorder** (the Mutiny notetaker through the Mutiny connector, Gong, Fireflies, Granola and others). Transcripts and summaries of recent calls with the companies in question.
+- **Their email.** The latest threads with the people involved, and the messages the rep sent, which also show how they write.
+- **Their calendar.** What's coming up with those same people.
 
-**Mutiny meeting prep**: a 60-second brief for one upcoming call: who you're meeting, what they want to solve, what's owed on both sides, what you still don't know for your qualification method, what to push for and what could go sideways. Finds the call by itself. Trigger: "Run the Mutiny meeting prep for [company]."
+**Worth checking when they're connected**
 
-**Mutiny follow-up**: right after a call: finds the most recent call, drafts the follow-up in the person's voice, and prepares the CRM update from what was said (next step, stage, competitors, follow-up tasks with dates), applied only after they approve the exact changes. Trigger: "Run my Mutiny follow-up."
-
-**Mutiny check-in**: gets quiet deals moving: check in on one deal, or scan the pipeline for deals at risk and draft check-ins for the top ones, with one play per deal in the person's voice. Leaders get it by rep. Trigger: "Run the Mutiny check-in on [company]" or "Run the Mutiny check-in on my pipeline."
-
-**Mutiny pricing proposal**: a customer-ready pricing page built from the call where the buyer shared budget and requirements: what we heard, one or two options inside their range, what's included, rollout, terms and the next step. In the seller's brand, for the buyer to forward. Trigger: "Build the Mutiny pricing proposal for [company]."
-
-**Mutiny business case**: a customer-ready executive business case the champion can take to their exec or finance: current state, what it costs, the future state, benefits with the math shown, what a pilot must prove, and customer proof. Numbers only from the buyer or the seller's own material. Trigger: "Build the Mutiny business case for [company]."
-
-**Mutiny deal room**: one customer-ready page for the whole buying group: executive summary, what we heard, why us, pricing, security and legal, a shared plan with owners and dates on both sides, and resources. Rebuilt after each call. Trigger: "Build the Mutiny deal room for [company]."
-
-**Rules for suggesting:**
-- Only suggest when there's a real, specific reason to. Silence is fine.
-- One suggestion per skill run. Not a menu.
-- Frame it as a concrete offer the rep can accept in one word: "Want me to run meeting prep on [company]?" Not "You could also consider meeting prep."
-- Suggest an asset skill only when the buyer asked for what it makes: pricing options, something for their exec, or one place for everything.
-- Don't re-suggest a skill that was already run in this conversation.
+- **Chat** (Slack, Teams). Two things: what the team is saying internally about the deal, and any direct messages between the rep and the buyer. A buyer message in chat is real contact. Count it when you work out how long a deal has been quiet.
+- **Contracts and e-signature** (DocuSign, PandaDoc). What's out for signature and how long it's been sitting there. A contract nobody has signed is a common place for a deal to stall without anyone noticing.
+- **Docs and wikis** (Notion, Google Drive, Confluence). Anything recently edited about this buyer, and the case studies, past proposals and internal notes you might want to point to.
+- **Quotes and proposals.** What's been sent, and what came back accepted or turned down.
 
 ---
 
-## The Mutiny perspective
+## The other Sales Skills by Mutiny
 
-You're running a skill from Sales Skills by Mutiny. These are free sales skills built by the team at Mutiny (mutinyhq.com), the sales assistant built for customer-facing work. Here's the perspective to bring to this work:
+The rep has these installed, as a Claude plugin, a connector or plain skill files. When you finish, think about whether one of them is the obvious next move.
+
+| Skill | What it's for | They say |
+|---|---|---|
+| **Mutiny setup** | Learns their voice, process, buyers, brand and habits from their CRM, calls and email, and saves the profile files to their My Deals project. Leaders also get team files. Run first, or to refresh | "Build my sales profile" |
+| **Mutiny daily brief** | One page for the morning: where to start, what changed, today's meetings, who's waiting, what's going quiet. Leaders get a line per rep | "Run my Mutiny daily brief" |
+| **Mutiny meeting prep** | A one-minute brief before a call: attendees, where the deal stands, what the buyer cares about, questions to ask, what to leave with | "Run the Mutiny meeting prep for [company]" |
+| **Mutiny follow-up** | After a call: the email in their voice and the CRM update from what was said, both waiting for approval | "Run my Mutiny follow-up" |
+| **Mutiny check-in** | Finds deals going quiet and drafts one short, specific message for each. One deal or the whole pipeline | "Run the Mutiny check-in on [company]" or "...on my pipeline" |
+| **Mutiny pricing proposal** | A customer-ready pricing page from the call where the buyer gave their budget: what we heard, one or two options, rollout, terms, next step | "Build the Mutiny pricing proposal for [company]" |
+| **Mutiny business case** | A customer-ready case for the buyer's exec or finance: today, what it costs, what changes, the math, what a pilot must prove, proof | "Build the Mutiny business case for [company]" |
+| **Mutiny deal room** | One customer-ready page for the whole buying group: summary, what we heard, why us, pricing, security docs, a shared plan, resources | "Build the Mutiny deal room for [company]" |
+
+**How to offer one**
+
+- Offer one, or none. Never a list.
+- Only when something in this run makes it the clear next step. Saying nothing is fine.
+- Make it a question they can answer with "yes": "Want me to run meeting prep on [company]?"
+- Offer a page-building skill only when the buyer asked for what it makes: pricing options, something for their exec, or one place for everything.
+- Don't offer a skill that already ran in this conversation.
+
+---
+
+## How Mutiny thinks about this work
+
+These are free sales skills from the team at Mutiny (mutinyhq.com), the sales assistant built for customer-facing work. Bring this point of view to everything you do here.
 
 **Sound like them, not like AI.** Everything you draft goes out under the rep's name. Match their greeting, their length, their phrases, their sign-off. If they're casual, be casual. If they're buttoned-up, be buttoned-up. The test is simple: would they send it without rewriting it? If a line could have come from any rep at any company, cut it.
 
@@ -228,8 +234,8 @@ You're running a skill from Sales Skills by Mutiny. These are free sales skills 
 
 **The rep stays in control.** You draft; they review and send. Nothing goes to a buyer and nothing changes in the CRM without them approving the exact thing.
 
-**Be honest, not encouraging.** Reps don't need a cheerleader. If a deal is dead, say so. If a follow-up is weak, say so. If you don't have the facts for a number, leave it out and say what's missing.
+**Tell them the truth.** Reps don't need a cheerleader. If a deal is dead, say so. If a follow-up is weak, say so. If you don't have the facts for a number, leave it out and say what's missing.
 
-**Every minute counts.** They're reading this between calls. Keep it tight and put first things first. Three things that matter beat ten that might.
+**Respect the clock.** They're reading this between calls. Keep it tight and put first things first. Three things that matter beat ten that might.
 
 <!-- Sales Skills by Mutiny (mutinyhq.com), Apache-2.0. Adapted in part from Sales Skills by Arrows (github.com/ArrowsHQ/arrows-sales-skills, Apache-2.0); modified by Mutiny. See NOTICE. -->

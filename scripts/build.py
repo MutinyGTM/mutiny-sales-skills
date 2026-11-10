@@ -4,7 +4,7 @@
 Each skill = src/skills/<name>.md (its own instructions)
            + src/shared-context.md (appended to every skill)
 with these placeholders filled in:
-  {{REPORT_TEMPLATE}}  -> src/templates/<name>.html   (daily brief, meeting prep)
+  {{REPORT_TEMPLATE}}  -> src/templates/report.html    (daily brief, meeting prep)
   {{ASSET_GUIDE}}      -> src/asset-guide.md           (pricing proposal, business case, deal room)
   {{ASSET_TEMPLATE}}   -> src/templates/asset.html
 
@@ -26,12 +26,11 @@ def main():
     shared = (SRC / "shared-context.md").read_text().strip()
     guide = (SRC / "asset-guide.md").read_text().strip()
     asset = (SRC / "templates" / "asset.html").read_text().strip()
+    report = (SRC / "templates" / "report.html").read_text().strip()
     errors = []
     for name in ORDER:
         body = (SRC / "skills" / f"{name}.md").read_text().strip()
-        tpl = SRC / "templates" / f"{name}.html"
-        if "{{REPORT_TEMPLATE}}" in body:
-            body = body.replace("{{REPORT_TEMPLATE}}", tpl.read_text().strip())
+        body = body.replace("{{REPORT_TEMPLATE}}", report)
         body = body.replace("{{ASSET_GUIDE}}", guide).replace("{{ASSET_TEMPLATE}}", asset)
         out = f"{body}\n\n---\n\n{shared}\n\n{NOTICE}\n"
         m = re.match(r'---\nname: ([a-z0-9-]+)\ndescription: "(.*)"\n---\n', out)

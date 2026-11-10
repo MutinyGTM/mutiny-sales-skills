@@ -1,6 +1,6 @@
 ---
 name: mutiny-setup
-description: "Setup for Sales Skills by Mutiny. Reads the person's CRM, call recordings, email and calendar, then builds the sales profile every Sales Skill uses, so everything Claude drafts sounds like them: their voice (how they write and talk, with real examples by situation), their sales process (stages, methodology, why they win and lose), their buyers, pricing, competitors, brand and customer proof, and how they work. Sales leaders also get team files their reps can add. About 5–10 minutes, two quick replies. Use this whenever someone says 'Build my sales profile', 'Refresh my sales profile' or 'Set up Sales Skills by Mutiny', asks how to get Claude set up for themselves or their sales team, asks Claude to learn how they sell or write to buyers, wants follow-ups that sound like them, wants the sales skills personalized to them or their team, or wants their team's sales process captured for Claude."
+description: "Mutiny setup, from Sales Skills by Mutiny. Run this first. It learns how the person writes and sells from their own CRM, call recordings, email and calendar, then saves a short sales profile that every other Sales Skill reads, so follow-ups, check-ins and customer pages sound like them and not like AI. The profile covers their voice with real examples, how their deals move and how they qualify, who they sell to, pricing, competitors, brand and customer proof, and their own habits and rules. Sales leaders also get team files to hand to their reps. It takes 5 to 10 minutes and two short replies, and it only reads. Use whenever someone says 'Build my sales profile', 'Refresh my sales profile' or 'Set up Sales Skills by Mutiny', wants Claude set up for selling, wants Claude to learn their voice or how their team sells, or wants drafts that sound like them."
 ---
 
 
@@ -18,36 +18,42 @@ You're building four short files from their real emails, calls and deals. Sales 
 
 Each skill reads what it needs. Follow-ups and check-ins lean on voice. Meeting prep leans on process. Pricing proposals, business cases and deal rooms lean on buyers, pricing, brand and proof. When a rep adds their leader's team files, the whole team runs one process and every rep still sounds like themselves.
 
-You get two replies from the person: one to name their best deals, one to confirm what you found. Their data answers everything else.
+You get two replies from the person: one to point you at a killer deal, one to confirm what you found. Their data answers everything else.
 
 ## Progress
 
-Open every setup message with one progress line:
+Open every setup message with one bold status line that says which of the five steps you're on:
 
 ```
-Sales Skills by Mutiny · Setup  ■■■□□  Reading your calls
+**Mutiny setup** · 2 of 5 · Reading your calls
 ```
 
-The squares follow the stage: `Starting` □□□□□ · `Reading your CRM` / `Reading your calls` / `Reading your email` ■□□□□ · `Studying your best deals` ■■□□□ · `Here's what I learned` ■■■□□ · `Building your profile` ■■■■□ · `Saved` ■■■■■. One bar per message, at the top. When a source finishes, give it one line with a real count:
+The steps: `1 of 5 · One question` · `2 of 5 · Reading your CRM` / `Reading your calls` / `Reading your email` · `3 of 5 · Studying your killer deal` · `4 of 5 · What I learned` · `5 of 5 · Building your profile`. The last message opens with `**Mutiny setup** · Done · Profile ready`. One status line per message, at the top.
+
+When you've finished reading, show what you read in one small table, with a real count on every row:
 
 ```
-✓ CRM: 46 open deals, 112 closed in the last 6 months
-✓ Calls: read your last 10 calls
-✓ Email: 28 emails you sent to buyers, and their replies
-– Calendar: not connected (skipping meeting context)
+| Source | What I read |
+|---|---|
+| CRM | 46 open deals, 112 closed in the last 6 months |
+| Calls | Your last 10 calls |
+| Email | 28 emails you sent to buyers, and their replies |
+| Calendar | Not connected, so no meeting context |
 ```
 
-## Step 1: Ask for their best deals
+## Step 1: Ask for one killer deal
 
 Ask one thing before you read anything. Anyone can answer it, and the answer shows you what good looks like for this person:
 
 ```
-Sales Skills by Mutiny · Setup  □□□□□  Starting
+**Mutiny setup** · 1 of 5 · One question
 
-I'm about to read your CRM, calls and email so that what I draft sounds like you, not like AI. Give me a few minutes. One question before I start:
+I'm about to read your CRM, calls and email so that what I draft sounds like you, not like AI. Give me a few minutes. First:
 
-Which one or two deals are you proudest of? Yours or your team's, won or lost, big or small. The ones that were run the way you'd run every deal if you had the time.
-Or say "skip" and I'll find your best wins myself.
+**What's one killer deal you could point me to?**
+
+Yours or your team's, won or lost, big or small. The one that was run the way you'd run every deal if you had the time.
+Or say "skip" and I'll find your best win myself.
 ```
 
 If they asked for less (say, "learn how I write"), tell them in a line that voice is one of four short files and the other three cost them nothing extra. Then carry on.
@@ -62,7 +68,7 @@ Find out what's connected by trying it: CRM, call recorder, email, calendar, the
 - **CRM:** filtered queries and totals. Don't open records one by one. No more than 200 deal records. Read notes only on the best deals, 10 recent wins and 10 recent losses, and skip any note that's a long paste (a Slack thread, a log).
 - **Calls:** use the summaries that come back in a list (often 20 at a time). Pull full transcripts for 3 at most, starting with calls from the best deals.
 - **Email:** up to 25 threads they sent. Read only as much of each as you need.
-- **Best deals:** the full history for 2 at most.
+- **Best deals:** the full history for 2 at most: the killer deal they named, and one more win you pick yourself.
 - **Leaders:** totals per rep (deal count, conversion, time in stage), and the full notes on one deal per rep.
 
 When a source is bigger than the budget, read the most recent slice and say so ("read 200 of about 1,400 deals").
@@ -96,9 +102,9 @@ Read up to 25 threads they sent to buyers, with the buyers' replies. Set aside a
 - **What gets replies.** Set the emails that got an answer beside the ones that didn't, and compare length, subject line, and whether they ended on a question. Report a pattern only when there are enough examples to trust it.
 - **Rules they follow.** What they always or never do ("never sends pricing in the first email," "always offers two times," "no 'just checking in'").
 
-### Their best deals
+### Their killer deal
 
-Find the deals they named in the CRM, email and calls. Two at most. If they said skip, take the two recent wins that closed fastest or biggest against their usual deal. Read each from first touch to close: the stage changes, every email in both directions, every call, who joined and when, how long each stage took.
+Find the deal they named in the CRM, email and calls. Then pick one more recent win yourself, the one that closed fastest or biggest against their usual deal, so you have two to compare. If they said skip, pick both. Read each from first touch to close: the stage changes, every email in both directions, every call, who joined and when, how long each stage took.
 
 Then name the three to five moves that set these deals apart from their usual one: how fast they followed up, what they sent after the demo, how and when they reached more people, how they handled pricing, how they worked with the champion, how they closed. Those moves feed four places:
 
@@ -107,9 +113,9 @@ Then name the three to five moves that set these deals apart from their usual on
 - **Voice examples:** the real emails from these deals
 - **Why we win and lose** (sales process file)
 
-If you can't find a deal they named, or it's too new to have a history, say so in Step 3 and study the nearest deal that has one. If they have fewer than two wins, use what there is plus their furthest-along open deal, and say so.
+If you can't find the deal they named, or it's too new to have a history, say so in Step 3 and study the nearest deal that has one. If they have fewer than two wins, use what there is plus their furthest-along open deal, and say so.
 
-If a rep ran the leader's best deal, the team's moves go in the sales process file. Only the leader's own part, how they stepped in, goes in their how-I-work file.
+If a rep ran the leader's killer deal, the team's moves go in the sales process file. Only the leader's own part, how they stepped in, goes in their how-I-work file.
 
 ### Rep, leader, or both
 
@@ -138,58 +144,123 @@ Work this out from the evidence. Don't ask open questions about strengths or pre
 
 From the calendar, the kinds of meetings they have and how many. From the web, their company site and any resources or case studies page.
 
-The site also gives you what the page-building skills need to make something a buyer will see: the primary and accent colors (hex), the main font, where the logo lives, and up to five customer stories, each with its real URL and headline result. Take only what the site shows. Never guess a color or a customer's result.
+The page-building skills need two more things from you, so get both now.
+
+**Customer stories.** Up to five from the site, each with its real URL and headline result. Never write or round a customer's result yourself.
+
+**Their brand: colors, font, logo.** Fetching a page usually gives you the words on it and none of its styling, so one look at the homepage often comes back with nothing. Don't stop there. Work down this list until you have a primary color as a hex code:
+
+1. **The homepage's own tags.** A theme color if it declares one, and the URLs of the logo and the share image.
+2. **The site's stylesheet,** if you can open it. Color variables, the color of buttons and links, the font family on headings and body text.
+3. **A brand, press or media kit page** on the site, or a search for "[company] brand guidelines."
+4. **Their connected docs** (Notion, Google Drive, Confluence). A brand guide, a design system page, or the master deck or proposal template.
+5. **The logo or share image itself.** If you can read exact colors out of it, take the main one and mark it "(from the logo, confirm)."
+
+Note where each value came from. If you get to the end with no color, don't guess one, and don't leave a silent blank. Ask for it in Step 3.
 
 ## Step 3: Show what you learned, and confirm
 
-Progress: `Here's what I learned`.
+Status: `4 of 5 · What I learned`.
 
-Send one message. This is where they should think "it gets me." Make every line specific and backed by something you read, and include at least one pattern they probably haven't noticed. Follow it with two questions at most, then one line asking them to confirm.
+Send one message. This is where they should think "it gets me." Make everything in it specific and backed by something you read, and include at least one pattern they probably haven't noticed.
+
+The message always has the same shape: the table of what you read, two sections under headers, then your questions.
+
+- **Section one is about the person.** Who they are, how they sound, how they sell. Words and quotes. Keep the numbers out of it.
+- **Section two is about their deals.** This is where the numbers, stages and deal details go, in a table.
 
 For a rep:
 
 ```
-Here's what I learned about how you sell.
+**Mutiny setup** · 4 of 5 · What I learned
 
-You carry your own deals: [N] open, mostly [segment].
-• You sell [product] to [titles] at [company type, size]. Deals run about $[X] and take about [Y] weeks.
-• You qualify on [methodology, or what you actually check]. [What usually gets missed].
-• On calls you [how they open, or how they handle pricing]: "[short real quote]".
-• In email you're [2–3 words]. You open with "[greeting]", close with "[sign-off]", and rarely go past [N] words.
-• A line that's all you: "[real phrase]".
-• On [best deal] you [2–3 specific moves]. Most of your other deals don't get [the move that slips most].
-• What's working: [e.g. "emails that end on a specific question got a reply 9 of 12 times, against 3 of 14 without one"].
+[the table of what you read]
 
-Two quick ones:
+## You, your voice and how you sell
+
+**Your role.** You carry your own deals, mostly [segment].
+
+**On calls.** You [how they open, or how they handle pricing].
+> "[short real quote]"
+
+**In email.** You're [2–3 words]. You open with "[greeting]", close with "[sign-off]", and keep it short.
+
+**A line that's all you.**
+> "[real phrase]"
+
+**How you qualify.** You check [methodology, or what they actually check]. [What usually gets missed].
+
+**When a deal goes right.** On your killer deal you [2–3 specific moves].
+
+## A bit about your deals
+
+| | |
+|---|---|
+| What you sell | [product] to [titles] at [company type, size] |
+| Open right now | [N] deals |
+| A typical deal | About $[X], about [Y] weeks |
+| Your killer deal | [type of deal], and [what made it different, with a number] |
+| Your brand | [primary color as hex], [font], from [where you found them] |
+| What slips | Most of your other deals don't get [the move that slips most] |
+| What's working | [e.g. emails that end on a specific question got a reply 9 of 12 times, against 3 of 14 without one] |
+
+## Two quick questions
+
 1. [Specific question, with the likely answer offered]
 2. [Specific question]
 
-A line each is plenty, and fix anything I got wrong above. Or just say "looks right."
+A line each is plenty, and fix anything I got wrong. Or just say "looks right."
 ```
 
 For a leader:
 
 ```
-Here's what I learned about how your team sells.
+**Mutiny setup** · 4 of 5 · What I learned
 
-You lead a team of [N] ([names]) and carry a few deals yourself.
-• [X] open deals across the team, averaging $[X] and about [Y] weeks to close.
-• How deals really move: [stage → stage → stage]. Most stall at [stage], usually because [reason].
-• The team qualifies on [methodology]. [What reps capture, and what usually gets missed].
-• On [best deal], [rep] [2–3 specific moves]. [Top rep] does [habit] and the rest of the team doesn't, and you can see it in [metric].
-• You win against [competitor] when [reason] and lose when [reason].
-• One thing you may not have seen: [non-obvious team insight].
+[the table of what you read]
 
-Two quick ones:
+## You, your team and how you sell
+
+**Your role.** You lead a team of [N] ([names]) and carry a few deals yourself.
+
+**How you sound.** In email you're [2–3 words]. You open with "[greeting]" and close with "[sign-off]".
+> "[real phrase]"
+
+**How the team qualifies.** On [methodology]. [What reps capture, and what usually gets missed].
+
+**When a deal goes right.** On your killer deal, [rep] [2–3 specific moves]. [Top rep] does [habit] and the rest of the team doesn't.
+
+## A bit about your team's deals
+
+| | |
+|---|---|
+| Open right now | [X] deals across the team |
+| A typical deal | About $[X], about [Y] weeks to close |
+| How deals really move | [stage → stage → stage] |
+| Where they stall | [stage], usually because [reason] |
+| Against [competitor] | You win when [reason] and lose when [reason] |
+| One thing you may not have seen | [non-obvious team insight, with the number behind it] |
+| Your brand | [primary color as hex], [font], from [where you found them] |
+
+## Two quick questions
+
 1. [Specific question]
 2. [Specific question]
 
-A line each is plenty, and fix anything I got wrong above. Or just say "looks right."
+A line each is plenty, and fix anything I got wrong. Or just say "looks right."
 ```
 
-For someone who does both, open with the rep line and the team line ("You lead a team of [N] ([names]) and carry [N] deals yourself"). Then give three or four lines on their own voice and deals and two or three on the team. Eight lines at most.
+For someone who does both, use the rep version. Open **Your role** with both facts ("You lead a team of [N] ([names]) and carry [N] deals yourself"), and add the team's rows (how deals really move, where they stall) to the deals table. Eight rows at most.
 
-Cut any line you can't back with something you read during this setup. Five true lines beat seven with padding. Give a reply-rate pattern only when each side has at least 8 emails, and give the counts ("9 of 12, against 3 of 14"). Never say "twice as often."
+Drop any paragraph or row you can't back with something you read during this setup. A short true message beats a long padded one. Give a reply-rate pattern only when each side has at least 8 emails, and give the counts ("9 of 12, against 3 of 14"). Never say "twice as often."
+
+**If you couldn't find their brand.** Make the brand row say "Couldn't find it. See below." Then add this under the deals table. It doesn't count as one of your two questions:
+
+```
+**One thing I couldn't find: your brand colors.** Paste your main color as a hex code and your font, or a link to your brand guidelines, and I'll add them. Skip it and your pages will use a plain black-and-white style for now.
+```
+
+If they answer, use what they gave you. If they don't, write "Color: not found yet" under `## Brand and proof` and carry on.
 
 **The questions.** Two at most. Each one points at something specific you found, can be answered in a few words, and offers the likely answer when you have one. If the data settled everything, ask one or none. A good question does one of four jobs:
 
@@ -198,13 +269,13 @@ Cut any line you can't back with something you read during this setup. Five true
 - **Picks between real options.** "You and Sam write recaps very differently. Should the team follow yours, his, or neither?"
 - **Gets what only they know.** "4 of your 6 losses to [Competitor] came right after a security review. Is security usually what decides it?"
 
-Never ask something generic like "what are you best at?" If you couldn't tell whether they lead a team, spend one question on it ("Do you mostly sell, lead a team, or both?") and leave the role line out of the summary. If you did state their role, don't ask about it too. They'll correct you if it's wrong.
+Never ask something generic like "what are you best at?" If you couldn't tell whether they lead a team, spend one question on it ("Do you mostly sell, lead a team, or both?") and leave **Your role** out of the message. If you did state their role, don't ask about it too. They'll correct you if it's wrong.
 
-If a source was missing or failed, say so on the line it affects and give the fix (see Special cases).
+If a source was missing or failed, say so in the paragraph or row it affects and give the fix (see Special cases).
 
 ## Step 4: Build the files
 
-Progress: `Building your profile`.
+Status: `5 of 5 · Building your profile`.
 
 Take their corrections and answers, then write the files. Use their real numbers, real stage names and real quotes. Leave live deals out: these files describe how they sell, and they should still be true months from now. Mark anything you inferred without data "(inferred)".
 
@@ -232,7 +303,7 @@ Use these `##` headings exactly, in this order. The other Sales Skills find sect
 - `## What we sell and who we sell to`: the product in our words, the website and resources page, titles, company type and size, triggers, the buying committee
 - `## Pricing and packaging`: real ranges, tiers, how pricing gets presented
 - `## Competitors`: a line or two each: when it comes up, and how we usually win or lose
-- `## Brand and proof`: primary and accent color (hex), font, logo URL, then customer stories as `[Customer]: [result] ([URL])`. All of it from the website. The pricing proposal, business case and deal room skills read this section, so leave out anything you didn't see.
+- `## Brand and proof`: primary and accent color (hex), font and logo URL, each with where it came from (the site, a brand guide, or the person). Then customer stories as `[Customer]: [result] ([URL])`. The pricing proposal, business case and deal room skills read this section, so leave out anything you didn't see. If you never found a color, write "Color: not found yet."
 
 **`mutiny-how-i-work.md`** (theirs, 200–500 words)
 - `## About me`: name, role, company, and whether I'm a rep, a leader, or both
@@ -250,24 +321,27 @@ Use these `##` headings exactly, in this order. The other Sales Skills find sect
 
 ## Step 5: Save
 
-Progress: `Saved`.
+Status: `Done · Profile ready`.
 
 The files live in a Claude project, which is a workspace that keeps its files on hand for every chat inside it. Claude reads project files automatically, so nothing has to go in the project's instructions. Those stay free for the person's own notes and other skills. Every Sales Skill looks these files up by name.
 
 **In Claude:** create the files so they can be downloaded, then walk them through saving. Write it for someone who has never made a project:
 
 ```
-Your profile is ready. One more minute to save it, and every deal chat starts out knowing how you sell.
+**Mutiny setup** · Done · Profile ready
 
-1. Download the files above.
-2. In Claude's left sidebar, click Projects, then New project. Call it "My Deals."
-   (A project is a workspace that keeps files for every chat inside it.)
-3. On the project page, click + (or Add content) next to Files, choose to upload from your device, and pick the files you just downloaded. They're usually in your Downloads folder.
+## Save your profile
+
+One more minute, and every deal chat starts out knowing how you sell.
+
+1. **Download** the files above.
+2. **Make a project.** In Claude's left sidebar, click Projects, then New project. Call it "My Deals." A project is a workspace that keeps files for every chat inside it.
+3. **Add the files.** On the project page, click + (or Add content) next to Files, choose to upload from your device, and pick the files you just downloaded. They're usually in your Downloads folder.
 
 That's it. Start your deal chats inside My Deals and I'll already sound like you.
 ```
 
-Adjust it when you need to. If they're already in a project, drop step 2. If this is a refresh, tell them to replace the old files.
+Adjust it when you need to. If they're already in a project, drop step 2. If this is a refresh, tell them to replace the old files. If the brand is still missing, add one line: "Your pages will use a plain style until I have your brand color. Tell me 'my brand color is #...' any time and I'll update the file."
 
 If you can't make downloadable files here, give each file as its own copyable block with the filename as its title. Have them add each one on the project page: click + next to Files, choose the option to add text content, paste the block, and use the filename (for example `mutiny-voice.md`) as the title.
 
@@ -276,6 +350,8 @@ If you can't make downloadable files here, give each file as its own copyable bl
 **For leaders,** add this to the same message:
 
 ```
+## For your team
+
 Three of these files are your team's: mutiny-sales-process.md, mutiny-buyers-and-competitors.md and mutiny-how-we-work.md. They put every rep on your process while each one keeps their own voice.
 
 To roll them out, send those three files to your reps. Each rep adds them to their own My Deals project and says "Build my sales profile." Setup spots the team files and builds only that rep's voice and how-I-work files.
@@ -285,7 +361,7 @@ Want Sales Skills by Mutiny on for every rep without anyone installing it? On a 
 One more thing: you've just written your sales playbook down. If you ever bring your team onto Mutiny, bring these files, and we'll start from how you already sell.
 ```
 
-**To update later:** they say "Refresh my sales profile." Read the data again, show what changed in a few lines, and replace only the files that changed.
+**To update later:** they say "Refresh my sales profile." Read the data again, show what changed in a few lines, and replace only the files that changed. If all they give you is a brand color, a font or a link to brand guidelines, update `## Brand and proof` and hand back just that one file.
 
 ## Step 6: Run something useful
 
@@ -300,13 +376,13 @@ After that, and only if you can create scheduled tasks and no daily brief is sch
 
 ### Missing, failing or thin sources
 
-**A source fails partway.** Try once more, then move on: `✗ CRM: stopped after 120 deals (connection dropped). Using what I read.` Build numbers only from what you read, call partial totals partial, and raise it in Step 3 the way you would a missing source. A failed source never holds up setup.
+**A source fails partway.** Try once more, then move on, and say so in its row of the table: `| CRM | Stopped after 120 deals (connection dropped). Using what I read. |` Build numbers only from what you read, call partial totals partial, and raise it in Step 3 the way you would a missing source. A failed source never holds up setup.
 
 **Thin data.** With fewer than 5 closed deals, skip the won-against-lost comparison and write "Not enough closed deals yet" under `## Why we win and lose`. With no wins, study the two open deals that are furthest along and say that's what you did. With fewer than 10 emails sent to buyers, build the voice from what's there, mark it "(early read, refresh after more emails)", and spend one Step 3 question asking them to paste two or three more.
 
 **No CRM connected.** This is common and it's fine. Calls and email still give you most of the voice, the pitch, the objections, the competitors and the rough path a deal takes. Deal sizes and timelines often turn up in pricing emails and proposals. Rep or leader comes from their title and calendar. In the process file, mark whatever you inferred. Offer to connect the CRM inside the Step 3 message. Don't send a separate one.
 
-**Telling them what's missing (in Step 3).** When a missing connector would have changed a line, say so on that line and give the fix: "I couldn't see your email, so your voice is a guess. To add it, click your name at the bottom left, then Settings, then Connectors. Not listed? On a work plan, your Claude admin has to add it first." When the CRM isn't connected, put one short block ahead of the questions:
+**Telling them what's missing (in Step 3).** When a missing connector would have changed something, say so right where it applies and give the fix: "I couldn't see your email, so your voice is a guess. To add it, click your name at the bottom left, then Settings, then Connectors. Not listed? On a work plan, your Claude admin has to add it first." When the CRM isn't connected, put one short block ahead of the questions:
 
 ```
 I couldn't see your CRM, so your stages and numbers are my best read from calls and email. To sharpen them, connect it (your name at the bottom left, then Settings, then Connectors; on a work plan your admin may need to add it first) or drop a CSV export of your open and closed deals here. Up to you.
@@ -333,78 +409,74 @@ If `mutiny-sales-process.md`, `mutiny-buyers-and-competitors.md` or `mutiny-how-
 
 ---
 
-# Shared context for every Sales Skill (read before starting)
+# What every Sales Skill by Mutiny shares (read this before you start)
 
-## The person's sales profile
+## Their sales profile
 
-(If the skill you're running is Mutiny setup, skip this section: setup builds these files.)
+(Running Mutiny setup? Skip this part. Setup is what builds these files.)
 
-Before you start, look for their sales profile files in this project and use them:
+The person's sales profile lives in this project as a handful of short files. Find them and use them before you do anything else:
 
-- `mutiny-voice.md`: how they write and talk. Use it for anything you draft as them.
-- `mutiny-sales-process.md`: stages, what moves a deal, methodology, why they win and lose.
-- `mutiny-buyers-and-competitors.md`: what they sell, who buys, pricing, competitors, and `## Brand and proof` (their colors, font, logo and customer stories) for anything a buyer will see.
-- `mutiny-how-i-work.md`: what they do on their best deals, where their time goes, what slips, their rules.
-- `mutiny-how-we-work.md` (if present): their team's non-negotiables and what their leader wants to see.
+- `mutiny-voice.md`: how they write and talk. Anything you draft as them comes from here.
+- `mutiny-sales-process.md`: their stages, what moves a deal forward, how they qualify, why they win and lose.
+- `mutiny-buyers-and-competitors.md`: what they sell, who buys it, pricing and competitors, plus `## Brand and proof` (colors, font, logo, customer stories) for anything a buyer will see.
+- `mutiny-how-i-work.md`: what they do on their best deals, where their hours go, what slips, and their rules.
+- `mutiny-how-we-work.md`, when it's there: what their leader expects on every deal and wants to see each week.
 
-Look sections up by their `##` heading. When team files and personal files disagree, the team files set the process and rules; the personal files set voice and preferences.
+Find a section by its `##` heading. If a team file and a personal file disagree, the team file decides process and rules, and the personal file decides voice and preferences.
 
-If there's no profile at all, do the task anyway with what you can find, then mention once at the end: "Want me to learn how you sell first? Say 'Build my sales profile'. It takes about 5 minutes and makes everything I draft sound like you."
-
----
-
-## Before you start
-
-Check what other tools and data sources you have access to. Pull in real context wherever you can: the more real data, the better the output. Don't ask the rep to go find information you can look up yourself.
-
-**Core sources:**
-- **CRM (HubSpot, Salesforce, Attio, etc.):** If connected, pull deal data, contact info, activity history, and notes directly. Cross-reference what the rep says with what's actually in the CRM.
-- **Call recordings (the Mutiny notetaker through the Mutiny connector, Gong, Fireflies, Granola, etc.):** If connected, search for and pull relevant call transcripts or summaries. Look for recent calls with the companies mentioned.
-- **Email:** If connected, check for recent email threads with the contacts involved and any sent messages that show how the rep writes.
-- **Calendar:** If connected, check for upcoming meetings with these contacts.
-
-**Extra sources (often overlooked but high value):**
-- **Chat (Slack, Teams, etc.):** If connected, search for both internal deal conversations (sales channels, deal-specific channels, mentions of the buyer's company name) AND direct messages between the rep and buyer contacts. Chat activity counts as real deal activity: treat it the same as CRM touchpoints when calculating "days since last contact."
-- **Contracts and signing (DocuSign, PandaDoc, etc.):** If connected, check for pending signatures, contract status, and any recent signature activity. Contracts sitting unsigned are often where deals quietly die.
-- **Documents and knowledge (Notion, Google Drive, Confluence, etc.):** If connected, check for recently updated docs related to the buyer or deal. Also useful for finding case studies, collateral, past proposals or internal notes to reference.
-- **Quoting and proposals (CPQ tools, etc.):** If connected, check what quotes or proposals have been sent and what's been accepted or rejected.
-
-Use everything you find. The rep's time is valuable, so do the legwork for them.
+No profile at all? Do the job with whatever you can find. Then say once, at the end: "Want me to learn how you sell first? Say 'Build my sales profile'. It takes about 5 minutes, and after that everything I draft sounds like you."
 
 ---
 
-## The Mutiny skills available to suggest
+## Do the legwork
 
-Below are the Sales Skills by Mutiny the rep has installed (as a Claude plugin, a connector, or standalone skill files). When you finish the skill you're running, look at what came up and offer ONE relevant next Mutiny skill if it would really help. A concrete suggestion, not a pile. Don't suggest a skill that's already been run earlier in this conversation.
+Before you write anything, see which of the person's tools you can reach, and read what's there. Real data makes the output. A rep shouldn't have to go and fetch something you could have looked up.
 
-**Mutiny setup**: builds the person's sales profile (voice, sales process, buyers, competitors, brand and proof, how they work) from their CRM, calls and email, with two quick replies. Saves it as mutiny-*.md files in their My Deals project; leaders also get team files for their reps. Run first, or to refresh. Trigger: "Build my sales profile."
+**The four that matter most**
 
-**Mutiny daily brief**: a short read for the start of the day, built for a phone: what to do first, what changed since yesterday, today's calls with deal context, replies waiting, deals at risk and open time. Leaders also get a line per rep. Trigger: "Run my Mutiny daily brief."
+- **Their CRM** (HubSpot, Salesforce, Attio and others). Deals, contacts, activity history and notes. When what the rep tells you and what the record says don't match, say so.
+- **Their call recorder** (the Mutiny notetaker through the Mutiny connector, Gong, Fireflies, Granola and others). Transcripts and summaries of recent calls with the companies in question.
+- **Their email.** The latest threads with the people involved, and the messages the rep sent, which also show how they write.
+- **Their calendar.** What's coming up with those same people.
 
-**Mutiny meeting prep**: a 60-second brief for one upcoming call: who you're meeting, what they want to solve, what's owed on both sides, what you still don't know for your qualification method, what to push for and what could go sideways. Finds the call by itself. Trigger: "Run the Mutiny meeting prep for [company]."
+**Worth checking when they're connected**
 
-**Mutiny follow-up**: right after a call: finds the most recent call, drafts the follow-up in the person's voice, and prepares the CRM update from what was said (next step, stage, competitors, follow-up tasks with dates), applied only after they approve the exact changes. Trigger: "Run my Mutiny follow-up."
-
-**Mutiny check-in**: gets quiet deals moving: check in on one deal, or scan the pipeline for deals at risk and draft check-ins for the top ones, with one play per deal in the person's voice. Leaders get it by rep. Trigger: "Run the Mutiny check-in on [company]" or "Run the Mutiny check-in on my pipeline."
-
-**Mutiny pricing proposal**: a customer-ready pricing page built from the call where the buyer shared budget and requirements: what we heard, one or two options inside their range, what's included, rollout, terms and the next step. In the seller's brand, for the buyer to forward. Trigger: "Build the Mutiny pricing proposal for [company]."
-
-**Mutiny business case**: a customer-ready executive business case the champion can take to their exec or finance: current state, what it costs, the future state, benefits with the math shown, what a pilot must prove, and customer proof. Numbers only from the buyer or the seller's own material. Trigger: "Build the Mutiny business case for [company]."
-
-**Mutiny deal room**: one customer-ready page for the whole buying group: executive summary, what we heard, why us, pricing, security and legal, a shared plan with owners and dates on both sides, and resources. Rebuilt after each call. Trigger: "Build the Mutiny deal room for [company]."
-
-**Rules for suggesting:**
-- Only suggest when there's a real, specific reason to. Silence is fine.
-- One suggestion per skill run. Not a menu.
-- Frame it as a concrete offer the rep can accept in one word: "Want me to run meeting prep on [company]?" Not "You could also consider meeting prep."
-- Suggest an asset skill only when the buyer asked for what it makes: pricing options, something for their exec, or one place for everything.
-- Don't re-suggest a skill that was already run in this conversation.
+- **Chat** (Slack, Teams). Two things: what the team is saying internally about the deal, and any direct messages between the rep and the buyer. A buyer message in chat is real contact. Count it when you work out how long a deal has been quiet.
+- **Contracts and e-signature** (DocuSign, PandaDoc). What's out for signature and how long it's been sitting there. A contract nobody has signed is a common place for a deal to stall without anyone noticing.
+- **Docs and wikis** (Notion, Google Drive, Confluence). Anything recently edited about this buyer, and the case studies, past proposals and internal notes you might want to point to.
+- **Quotes and proposals.** What's been sent, and what came back accepted or turned down.
 
 ---
 
-## The Mutiny perspective
+## The other Sales Skills by Mutiny
 
-You're running a skill from Sales Skills by Mutiny. These are free sales skills built by the team at Mutiny (mutinyhq.com), the sales assistant built for customer-facing work. Here's the perspective to bring to this work:
+The rep has these installed, as a Claude plugin, a connector or plain skill files. When you finish, think about whether one of them is the obvious next move.
+
+| Skill | What it's for | They say |
+|---|---|---|
+| **Mutiny setup** | Learns their voice, process, buyers, brand and habits from their CRM, calls and email, and saves the profile files to their My Deals project. Leaders also get team files. Run first, or to refresh | "Build my sales profile" |
+| **Mutiny daily brief** | One page for the morning: where to start, what changed, today's meetings, who's waiting, what's going quiet. Leaders get a line per rep | "Run my Mutiny daily brief" |
+| **Mutiny meeting prep** | A one-minute brief before a call: attendees, where the deal stands, what the buyer cares about, questions to ask, what to leave with | "Run the Mutiny meeting prep for [company]" |
+| **Mutiny follow-up** | After a call: the email in their voice and the CRM update from what was said, both waiting for approval | "Run my Mutiny follow-up" |
+| **Mutiny check-in** | Finds deals going quiet and drafts one short, specific message for each. One deal or the whole pipeline | "Run the Mutiny check-in on [company]" or "...on my pipeline" |
+| **Mutiny pricing proposal** | A customer-ready pricing page from the call where the buyer gave their budget: what we heard, one or two options, rollout, terms, next step | "Build the Mutiny pricing proposal for [company]" |
+| **Mutiny business case** | A customer-ready case for the buyer's exec or finance: today, what it costs, what changes, the math, what a pilot must prove, proof | "Build the Mutiny business case for [company]" |
+| **Mutiny deal room** | One customer-ready page for the whole buying group: summary, what we heard, why us, pricing, security docs, a shared plan, resources | "Build the Mutiny deal room for [company]" |
+
+**How to offer one**
+
+- Offer one, or none. Never a list.
+- Only when something in this run makes it the clear next step. Saying nothing is fine.
+- Make it a question they can answer with "yes": "Want me to run meeting prep on [company]?"
+- Offer a page-building skill only when the buyer asked for what it makes: pricing options, something for their exec, or one place for everything.
+- Don't offer a skill that already ran in this conversation.
+
+---
+
+## How Mutiny thinks about this work
+
+These are free sales skills from the team at Mutiny (mutinyhq.com), the sales assistant built for customer-facing work. Bring this point of view to everything you do here.
 
 **Sound like them, not like AI.** Everything you draft goes out under the rep's name. Match their greeting, their length, their phrases, their sign-off. If they're casual, be casual. If they're buttoned-up, be buttoned-up. The test is simple: would they send it without rewriting it? If a line could have come from any rep at any company, cut it.
 
@@ -416,8 +488,8 @@ You're running a skill from Sales Skills by Mutiny. These are free sales skills 
 
 **The rep stays in control.** You draft; they review and send. Nothing goes to a buyer and nothing changes in the CRM without them approving the exact thing.
 
-**Be honest, not encouraging.** Reps don't need a cheerleader. If a deal is dead, say so. If a follow-up is weak, say so. If you don't have the facts for a number, leave it out and say what's missing.
+**Tell them the truth.** Reps don't need a cheerleader. If a deal is dead, say so. If a follow-up is weak, say so. If you don't have the facts for a number, leave it out and say what's missing.
 
-**Every minute counts.** They're reading this between calls. Keep it tight and put first things first. Three things that matter beat ten that might.
+**Respect the clock.** They're reading this between calls. Keep it tight and put first things first. Three things that matter beat ten that might.
 
 <!-- Sales Skills by Mutiny (mutinyhq.com), Apache-2.0. Adapted in part from Sales Skills by Arrows (github.com/ArrowsHQ/arrows-sales-skills, Apache-2.0); modified by Mutiny. See NOTICE. -->

@@ -16,7 +16,8 @@ Pull out, with the date and source of each: what the buyer said they want and wh
 - `mutiny-voice.md`: `## How I sound`, `## In writing`, `## Never`. The page is more polished than an email, but the sentences should still sound like the person.
 - `mutiny-how-i-work.md`: `## My rules` (how they handle pricing, discounts and competitors) and `## What I do on my best deals`.
 - `mutiny-sales-process.md`: `## Pipeline stages`, for what normally comes next.
-- **No profile:** build it anyway. Take brand colors and customer stories from the seller's website if you can reach it; otherwise leave `brand.color` as is and leave proof out. Say so in the chat message.
+- **No brand color on file** (no profile, or `## Brand and proof` says "not found yet"): look once more before you build. Check the homepage's own tags for a theme color, the site's stylesheet if you can open it, a brand or press page, and their connected docs for a brand guide or a proposal template. If you find a hex code, use it and say where it came from. If you don't, leave `brand.color` as it is, build the page in the plain style, and put this under Check before sending: "No brand color on file, so this uses a plain style. Give me a hex code and I'll match it." Never pick a color yourself.
+- **No profile at all:** build it anyway. Take customer stories from the seller's website if you can reach it; otherwise leave proof out. Say so in the chat message.
 
 ## Fill the page
 
