@@ -115,7 +115,7 @@ Yes. Each rep adds the plugin and runs setup. A sales leader's setup also makes 
 
 ## For maintainers
 
-Skills are assembled from `src/`. Edit there, then run `python3 scripts/build.py`. It rebuilds every `SKILL.md` (top-level folders and the plugin copy) and checks the frontmatter.
+Skills are assembled from `src/`. Edit there, then run `python3 scripts/build.py`. It rebuilds every `SKILL.md` (top-level folders and the plugin copy) and checks the frontmatter. Then raise `version` in `plugins/mutiny-sales-skills/.claude-plugin/plugin.json`. Claude only picks up a change when the version number goes up.
 
 - `src/skills/` — each skill's own instructions
 - `src/shared-context.md` — appended to every skill: profile files, sources, the skill list and the Mutiny perspective

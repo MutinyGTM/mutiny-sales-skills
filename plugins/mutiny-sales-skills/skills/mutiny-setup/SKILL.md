@@ -271,6 +271,8 @@ If they answer, use what they gave you. If they don't, write "Color: not found y
 
 Never ask something generic like "what are you best at?" If you couldn't tell whether they lead a team, spend one question on it ("Do you mostly sell, lead a team, or both?") and leave **Your role** out of the message. If you did state their role, don't ask about it too. They'll correct you if it's wrong.
 
+**Internal chat is background.** What you read in Slack or Teams helps you understand the person and their deals. Use it for that and nothing else. Don't quote their internal messages back to them, and don't name who they were talking to, in the summary or in your questions. Anything you quote in this message comes from their emails to buyers or their calls.
+
 If a source was missing or failed, say so in the paragraph or row it affects and give the fix (see Special cases).
 
 ## Step 4: Build the files
@@ -391,6 +393,16 @@ I couldn't see your CRM, so your stages and numbers are my best read from calls 
 Read a CSV the way you'd read a CRM: owners, stages, amounts, close dates, won and lost. Run the CRM and best-deal reads again before you build the files.
 
 **Nothing connected at all.** Replace the Step 3 message with one they can skim and answer in short bullets: do you sell, lead a team, or both; what you sell and to whom; your usual deal size and cycle; how leads reach you; your stages; how you qualify (MEDDIC, SPICED, BANT, your own, or nothing formal); your main competitors; what made the deals you named go well; and "paste two or three recent emails you sent to buyers, any will do." Build the voice from those emails.
+
+### The person doesn't seem to sell
+
+Sometimes the person running setup isn't a seller. They might be in marketing or ops, or trying the skills out before rolling them out to a team. The signs: no deals under their name, almost no email to buyers, and a title outside sales.
+
+- **Don't stop, and don't suggest they stop.** They asked for a profile, so build one.
+- **Say what you saw, once.** Open the Step 3 message with one line: "I didn't find deals or buyer emails under your name, so this is a thin first pass." Don't guess at why.
+- **Build from what there is.** Use whatever they've written to customers, partners or prospects, and the company's deals for the team files, labeled "company-wide." Mark the voice file "(early read, refresh after more emails)."
+- **Spend one question on what would help most.** Usually that's asking them to paste two or three emails they've sent to customers.
+- **Mention the better test last, as an option.** After the questions, one line: "For a fuller picture, have someone who carries deals run this in their own Claude." Then carry on with their profile.
 
 ### Team files already in the project
 
