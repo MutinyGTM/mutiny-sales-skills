@@ -1,0 +1,15 @@
+{
+  "name": "mutiny",
+  "description": "Free sales skills for Claude from Mutiny.",
+  "owner": {
+    "name": "Mutiny",
+    "url": "https://www.mutinyhq.com"
+  },
+  "plugins": [
+    {
+      "name": "mutiny-sales-skills",
+      "source": "./plugins/mutiny-sales-skills",
+      "description": "Learns how you sell and how you write from your own calls, emails, and CRM, then drafts your follow-ups, meeting prep, daily brief and check-ins in your voice, and builds customer-ready pricing proposals, business cases and deal rooms from your calls. Start by saying \"Build my sales profile.\" Works best with your CRM, email, calendar, and call recorder connected. For AEs, founders who sell, and sales leaders. Free, from Mutiny."
+    }
+  ]
+}
