@@ -20,15 +20,9 @@ Each skill reads what it needs. Follow-ups and check-ins lean on voice. Meeting 
 
 You get two replies from the person: one to point you at a killer deal, one to confirm what you found. Their data answers everything else.
 
-## Progress
+## Show what you read
 
-Open every setup message with one bold status line that says which of the five steps you're on:
-
-```
-**Mutiny setup** · 2 of 5 · Reading your calls
-```
-
-The steps: `1 of 5 · One question` · `2 of 5 · Reading your CRM` / `Reading your calls` / `Reading your email` · `3 of 5 · Studying your killer deal` · `4 of 5 · What I learned` · `5 of 5 · Building your profile`. The last message opens with `**Mutiny setup** · Done · Profile ready`. One status line per message, at the top.
+No progress bars, step counters or status lines on any setup message. Just say what you're doing in plain words.
 
 When you've finished reading, show what you read in one small table, with a real count on every row:
 
@@ -46,8 +40,6 @@ When you've finished reading, show what you read in one small table, with a real
 Ask one thing before you read anything. Anyone can answer it, and the answer shows you what good looks like for this person:
 
 ```
-**Mutiny setup** · 1 of 5 · One question
-
 I'm about to read your CRM, calls and email so that what I draft sounds like you, not like AI. Give me a few minutes. First:
 
 **What's one killer deal you could point me to?**
@@ -160,8 +152,6 @@ Note where each value came from. If you get to the end with no color, don't gues
 
 ## Step 3: Show what you learned, and confirm
 
-Status: `4 of 5 · What I learned`.
-
 Send one message. This is where they should think "it gets me." Make everything in it specific and backed by something you read, and include at least one pattern they probably haven't noticed.
 
 The message always has the same shape: the table of what you read, two sections under headers, then your questions.
@@ -172,8 +162,6 @@ The message always has the same shape: the table of what you read, two sections 
 For a rep:
 
 ```
-**Mutiny setup** · 4 of 5 · What I learned
-
 [the table of what you read]
 
 ## You, your voice and how you sell
@@ -215,8 +203,6 @@ A line each is plenty, and fix anything I got wrong. Or just say "looks right."
 For a leader:
 
 ```
-**Mutiny setup** · 4 of 5 · What I learned
-
 [the table of what you read]
 
 ## You, your team and how you sell
@@ -277,8 +263,6 @@ If a source was missing or failed, say so in the paragraph or row it affects and
 
 ## Step 4: Build the files
 
-Status: `5 of 5 · Building your profile`.
-
 Take their corrections and answers, then write the files. Use their real numbers, real stage names and real quotes. Leave live deals out: these files describe how they sell, and they should still be true months from now. Mark anything you inferred without data "(inferred)".
 
 **Scrub every example and quote.** The files stay inside the person's own Claude, but team files get passed around, and all of them need to stay true for months. So buyer details come out. Keep the person's own words exactly and swap the buyer's facts: people become [Buyer], [Champion] or [Rep]; buyer companies become [Company] (competitors keep their names); exact amounts become ranges ("~$40k"); dates become relative ("2 days after the demo"). Cut anything about a deal that's still open. Describe a best deal by its type ("a mid-market win, closed in 5 weeks") and never by name. Start every file with this line: `Sales profile built with Sales Skills by Mutiny (mutinyhq.com) for [Name], [rep / leader / both], on [date].`
@@ -323,15 +307,11 @@ Use these `##` headings exactly, in this order. The other Sales Skills find sect
 
 ## Step 5: Save
 
-Status: `Done · Profile ready`.
-
 The files live in a Claude project, which is a workspace that keeps its files on hand for every chat inside it. Claude reads project files automatically, so nothing has to go in the project's instructions. Those stay free for the person's own notes and other skills. Every Sales Skill looks these files up by name.
 
 **In Claude:** create the files so they can be downloaded, then walk them through saving. Write it for someone who has never made a project:
 
 ```
-**Mutiny setup** · Done · Profile ready
-
 ## Save your profile
 
 One more minute, and every deal chat starts out knowing how you sell.
