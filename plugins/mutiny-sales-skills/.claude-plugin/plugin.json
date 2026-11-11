@@ -1,7 +1,7 @@
 {
   "name": "mutiny-sales-skills",
   "displayName": "Sales Skills by Mutiny",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Learns how you sell and how you write from your own calls, emails, and CRM, then drafts your follow-ups, meeting prep, daily brief and check-ins in your voice, and builds customer-ready pricing proposals, business cases and deal rooms from your calls. Start by saying \"Build my sales profile.\" Works best with your CRM, email, calendar, and call recorder connected. For AEs, founders who sell, and sales leaders. Free, from Mutiny.",
   "author": {
     "name": "Mutiny",
@@ -9,7 +9,7 @@
   },
   "homepage": "https://www.mutinyhq.com",
   "license": "Apache-2.0",
-  "repository": "https://github.com/UncleAchoo/mutiny-sales-skills",
+  "repository": "https://github.com/MutinyGTM/mutiny-sales-skills",
   "keywords": [
     "sales",
     "follow-up email",

@@ -65,8 +65,8 @@ Each skill knows about the others and offers the one next step that makes sense,
 
 This repo is a Claude plugin marketplace. Adding the plugin installs all 8 skills at once, and they update when this repo does.
 
-- **Claude (web or desktop):** go to **Customize**, then **Plugins**, then **Add**, then **Add marketplace**, and enter `UncleAchoo/mutiny-sales-skills`. Then add the **Sales Skills by Mutiny** plugin.
-- **Claude Code:** run `claude plugin marketplace add UncleAchoo/mutiny-sales-skills`, then `claude plugin install mutiny-sales-skills@mutiny`.
+- **Claude (web or desktop):** go to **Customize**, then **Plugins**, then **Add**, then **Add marketplace**, and enter `MutinyGTM/mutiny-sales-skills`. Then add the **Sales Skills by Mutiny** plugin.
+- **Claude Code:** run `claude plugin marketplace add MutinyGTM/mutiny-sales-skills`, then `claude plugin install mutiny-sales-skills@mutiny`.
 
 Then start a new chat and type "Build my sales profile."
 

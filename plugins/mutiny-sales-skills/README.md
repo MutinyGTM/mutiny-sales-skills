@@ -14,4 +14,4 @@ When you run a skill, Claude reads deal data, including names and email addresse
 
 The setup skill saves your sales profile as files in your own Claude project, which you control. Nothing is stored outside your Claude account.
 
-More at [github.com/UncleAchoo/mutiny-sales-skills](https://github.com/UncleAchoo/mutiny-sales-skills).
+More at [github.com/MutinyGTM/mutiny-sales-skills](https://github.com/MutinyGTM/mutiny-sales-skills).
